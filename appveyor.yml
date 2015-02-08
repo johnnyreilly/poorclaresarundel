@@ -9,7 +9,7 @@ before_build:
 
 build_script:
 - cmd: >-
-    msbuild PoorClaresAngular.sln /p:Configuration=Release /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    msbuild PoorClaresAngular.sln /p:Configuration=Release /verbosity:quiet /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
     cd PoorClaresAngular
 
