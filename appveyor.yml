@@ -13,8 +13,6 @@ build_script:
 
     cd PoorClaresAngular
 
-    #gulp release-build
-
     msbuild PoorClaresAngular.csproj /t:Package /p:PackageLocation=..\PoorClaresAngular.zip
 
     cd ..
