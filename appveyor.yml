@@ -1,0 +1,112 @@
+version: 1.0.{build}
+os: Visual Studio 2015 CTP
+configuration: Release
+
+# scripts to run before build
+before_build:
+- cmd: >-
+    nuget restore PoorClaresAngular.sln
+
+    #npm install -g bower
+    
+    #npm install -g gulp
+
+    cd PoorClaresAngular
+
+    #bower install
+    
+    #npm install
+
+    cd ..
+
+#build:
+#  project: PoorClaresAngular.sln
+#  publish_wap: true
+#  verbosity: minimal
+
+build_script:
+- cmd: >-
+    msbuild PoorClaresAngular.sln /p:Configuration=Release /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+    cd PoorClaresAngular
+
+    #gulp release-build
+
+    msbuild PoorClaresAngular.csproj /t:Package /p:PackageLocation=..\PoorClaresAngular.zip
+
+    cd ..
+
+artifacts:
+- path: PoorClaresAngular.zip
+  name: WebApplication
+  type: WebDeployPackage
+    
+before_test:
+- ps: >-
+    # Locate Chutzpah
+
+    $ChutzpahDir = get-childitem chutzpah.console.exe -recurse | select-object -first 1 | select -expand Directory
+    
+    # Run tests using Chutzpah and export results as JUnit format to chutzpah-results.xml
+
+    $ChutzpahCmd = "$($ChutzpahDir)\chutzpah.console.exe $($env:APPVEYOR_BUILD_FOLDER)\PoorClaresAngular.UnitTests.JavaScript /junit .\chutzpah-results.xml"
+
+    Write-Host $ChutzpahCmd
+
+    Invoke-Expression $ChutzpahCmd
+
+    # Upload results to AppVeyor one by one
+
+    $testsuites = [xml](get-content .\chutzpah-results.xml)
+    
+    $anyFailures = $FALSE
+
+    foreach ($testsuite in $testsuites.testsuites.testsuite) {
+
+        write-host " $($testsuite.name)"
+
+        foreach ($testcase in $testsuite.testcase){
+
+            $failed = $testcase.failure
+
+            $time = $testsuite.time
+
+            if ($testcase.time) { $time = $testcase.time }
+
+            if ($failed) {
+
+                write-host "Failed   $($testcase.name) $($testcase.failure.message)"
+
+                Add-AppveyorTest $testcase.name -Outcome Failed -FileName $testsuite.name -ErrorMessage $testcase.failure.message -Duration $time
+
+            }
+
+            else {
+
+                write-host "Passed   $($testcase.name)"
+
+                Add-AppveyorTest $testcase.name -Outcome Passed -FileName $testsuite.name -Duration $time
+
+            }
+
+        }
+
+    }
+    
+    if ($anyFailures -eq $TRUE){
+
+        write-host "Failing build as there are broken tests"
+
+        $host.SetShouldExit(1)
+
+    }
+
+deploy:
+- provider: WebDeploy
+  server: https://poorclaresangular.scm.azurewebsites.net:443/msdeploy.axd?site=PoorClaresAngular
+  website: PoorClaresAngular
+  username:
+    secure: W9FMyg4sZ+2ZB+YLUIUrGzLH52wcs2JLMuqDMXR2Vc+ypnFF8f9IicGKBkvmTQHv
+  password:
+    secure: OfdyJRli28SPmISEI9TFL6IrCMr5DY1iNkXfRP2NGxSk2ATEwb4q9W+Bm4P9G3qG3L5JSChcYMAm4Cb2dnlxWQ==
+  remove_files: true
