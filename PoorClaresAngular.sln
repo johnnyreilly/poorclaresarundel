@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoorClaresAngular.UnitTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoorClaresAngular.UnitTests.JavaScript", "PoorClaresAngular.UnitTests.JavaScript\PoorClaresAngular.UnitTests.JavaScript.csproj", "{C03B569B-B9B0-49E1-8CD8-DF8770CDB844}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9E957C3A-7F8C-4F88-9D6B-5DAE377FDB67}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
