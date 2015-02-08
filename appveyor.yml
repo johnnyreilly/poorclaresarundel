@@ -7,23 +7,6 @@ before_build:
 - cmd: >-
     nuget restore PoorClaresAngular.sln
 
-    #npm install -g bower
-    
-    #npm install -g gulp
-
-    cd PoorClaresAngular
-
-    #bower install
-    
-    #npm install
-
-    cd ..
-
-#build:
-#  project: PoorClaresAngular.sln
-#  publish_wap: true
-#  verbosity: minimal
-
 build_script:
 - cmd: >-
     msbuild PoorClaresAngular.sln /p:Configuration=Release /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"

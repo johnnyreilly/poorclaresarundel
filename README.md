@@ -6,4 +6,4 @@ To my knowledge this is the first Convent with Continuous Delivery.
 
 ## Licence
 
-Copyright � 2014 [John Reilly](twitter.com/johnny_reilly). This project is licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
+Copyright © 2014 [John Reilly](twitter.com/johnny_reilly). This project is licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
