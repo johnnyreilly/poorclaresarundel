@@ -276,6 +276,7 @@
     <Content Include="partials\header.html" />
     <Content Include="partials\home.html" />
     <Content Include="images\main\AfricanStClare.jpg" />
+    <Content Include="partials\main\communityInterviewsWithSisters.html" />
     <Content Include="partials\main\workShop.html" />
     <Content Include="partials\main\workOur.html" />
     <Content Include="partials\main\events.html" />
