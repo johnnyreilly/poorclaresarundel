@@ -123,9 +123,6 @@
     <Content Include="Content\site.css">
       <DependentUpon>site.less</DependentUpon>
     </Content>
-    <Content Include="Content\site.min.css">
-      <DependentUpon>site.css</DependentUpon>
-    </Content>
     <Content Include="Content\workShopCardOrderForm.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -333,9 +330,6 @@
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="chutzpah.json" />
-    <Content Include="Content\site.css.map">
-      <DependentUpon>site.css</DependentUpon>
-    </Content>
     <Content Include="Content\Stylist_Life_in_a_convent.pdf" />
     <Content Include="js\controllers\nunCarouselController.js.map">
       <DependentUpon>nunCarouselController.ts</DependentUpon>
@@ -414,6 +408,9 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\site.css.map">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular.pubxml" />
