@@ -9,7 +9,9 @@ angular.module("poorClaresApp", [
     "ui.bootstrap",
     "poorClaresApp.controllers",
     "poorClaresApp.services"
-]).config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+]).config(['$animateProvider', function ($animateProvider) {
+    $animateProvider.classNameFilter(/carousel/);
+}]).config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
     var cacheBuster = "?v=" + new Date().getTime();
     function getTheConventTemplateUrl(params) {
         var view = params.view || "home";

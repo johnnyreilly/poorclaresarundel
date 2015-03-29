@@ -148,6 +148,12 @@
     <Content Include="images\main\MotherAustinGibson.jpg" />
     <Content Include="images\main\MotherCampionFleet.jpg" />
     <Content Include="images\main\MotherClareCampbell.jpg" />
+    <Content Include="images\main\Page2CommunityAtPrayer.JPG" />
+    <Content Include="images\main\Page3SusannaAtPrayer.JPG" />
+    <Content Include="images\main\Page4ChapelGroupAtPrayer.JPG" />
+    <Content Include="images\main\Page5GroupOnLawn.JPG" />
+    <Content Include="images\main\Page6YohaanaInLibrary.JPG" />
+    <Content Include="images\main\Page7ProvidenceGroup.jpg" />
     <Content Include="images\main\prayerAt.jpg" />
     <Content Include="images\main\prayerOur1.jpg" />
     <Content Include="images\main\prayerOur2.jpg" />
@@ -231,7 +237,11 @@
     <Content Include="js\controllers\navController.js.map">
       <DependentUpon>navController.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="js\controllers\nunCarouselController.ts" />
     <TypeScriptCompile Include="js\controllers\prayerRequestController.ts" />
+    <Content Include="js\controllers\nunCarouselController.js">
+      <DependentUpon>nunCarouselController.ts</DependentUpon>
+    </Content>
     <Content Include="js\controllers\prayerRequestController.js">
       <DependentUpon>prayerRequestController.ts</DependentUpon>
     </Content>
@@ -276,6 +286,7 @@
     <Content Include="partials\header.html" />
     <Content Include="partials\home.html" />
     <Content Include="images\main\AfricanStClare.jpg" />
+    <Content Include="partials\main\us.html" />
     <Content Include="partials\main\communityInterviewsWithSisters.html" />
     <Content Include="partials\main\workShop.html" />
     <Content Include="partials\main\workOur.html" />
@@ -320,16 +331,15 @@
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-mocks.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.min.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="chutzpah.json" />
     <Content Include="Content\site.css.map">
       <DependentUpon>site.css</DependentUpon>
     </Content>
     <Content Include="Content\Stylist_Life_in_a_convent.pdf" />
+    <Content Include="js\controllers\nunCarouselController.js.map">
+      <DependentUpon>nunCarouselController.ts</DependentUpon>
+    </Content>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -407,6 +417,10 @@
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular.pubxml" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\angular.min.js.map" />
