@@ -412,6 +412,7 @@
     <Content Include="Content\site.css.map">
       <DependentUpon>site.css</DependentUpon>
     </Content>
+    <Content Include="bower.json" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular.pubxml" />
