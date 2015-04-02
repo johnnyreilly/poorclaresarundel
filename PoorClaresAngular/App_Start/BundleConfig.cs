@@ -16,8 +16,8 @@ namespace PoorClaresAngular
             bundles.Add(new StyleBundle("~/css/poorClaresApp")
                 .Include("~/content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery", "//code.jquery.com/jquery-1.11.1.min.js")
-                .Include("~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery", "//code.jquery.com/jquery-1.11.2.min.js")
+                .Include("~/Scripts/jquery.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
 
@@ -25,7 +25,7 @@ namespace PoorClaresAngular
                 "~/scripts/angular.js",
                 "~/scripts/angular-route.js",
                 "~/scripts/angular-animate.js",
-                "~/scripts/angular-ui/ui-bootstrap-tpls.js"
+                "~/scripts/ui-bootstrap-tpls.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/js/poorClaresApp").Include(

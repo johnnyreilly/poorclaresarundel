@@ -1,0 +1,23 @@
+{
+  "name": "PoorClaresAngular",
+  "version": "1.0.0",
+  "description": "The website for http://www.poorclaresarundel.org",
+  "main": "/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnnyreilly/poorclaresarundel.git"
+  },
+  "author": "John Reilly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnnyreilly/poorclaresarundel/issues"
+  },
+  "homepage": "https://github.com/johnnyreilly/poorclaresarundel",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  },
+  "dependencies": {}
+}
