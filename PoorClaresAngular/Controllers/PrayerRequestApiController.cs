@@ -51,7 +51,7 @@ namespace PoorClaresAngular.Controllers
                     fromEmail: prayerRequest.Email,
                     toEmail: _props.PrayerRequestEmailAddress,
                     subject: _props.PrayerRequestEmailSubject,
-                    text: System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(prayerRequest.PrayFor, true));
+                    text: /*System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(*/prayerRequest.PrayFor/*, true)*/); // It's text - it doesn't need anti xss
 
                 // Send prayer response email
                 _mailer.SendMail(_props.SmtpClientHost, _props.SmtpClientPort, _props.SmtpUserName, _props.SmtpPassword,
