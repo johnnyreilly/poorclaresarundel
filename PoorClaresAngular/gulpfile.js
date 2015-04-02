@@ -1,6 +1,24 @@
 ﻿var gulp = require("gulp");
+var gulpUtil = require("gulp-util");
+var del = require("del");
+var yargs = require("yargs").argv;
 
-gulp.task("install-bower-js-dependencies-into-project", function () {
+var isDebug = yargs.mode === "Debug";
+gulpUtil.log(gulpUtil.colors.green("isDebug: " + isDebug));
+
+gulp.task("clean", function (cb) {
+
+    gulpUtil.log("Delete installed bower assets");
+
+    return del([
+        "./content/fonts",
+        "./content/less",
+        "./scripts/*.js/"
+    ], { force: false },
+    cb);
+});
+
+gulp.task("install-bower-js-dependencies-into-project", ["clean"], function () {
 
     return gulp
         .src([
@@ -13,7 +31,7 @@ gulp.task("install-bower-js-dependencies-into-project", function () {
         .pipe(gulp.dest("./scripts"));
 });
 
-gulp.task("install-bower-css-dependencies-into-project", function () {
+gulp.task("install-bower-css-dependencies-into-project", ["clean"], function () {
 
     return gulp
         .src([

@@ -499,6 +499,24 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <CompileDependsOn>
+      $(CompileDependsOn);
+      GulpBuild;
+    </CompileDependsOn>
+	<CleanDependsOn>
+      $(CleanDependsOn);
+      GulpClean
+    </CleanDependsOn>
+  </PropertyGroup>
+  <Target Name="GulpBuild" DependsOnTargets="CompileTypeScript">
+    <Exec Command="npm install" />
+    <Exec Command="bower install" />
+    <Exec Command="gulp --mode $(ConfigurationName)" />
+  </Target>
+  <Target Name="GulpClean">
+    <Exec Command="gulp clean" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
