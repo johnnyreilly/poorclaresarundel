@@ -1,6 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PoorClaresAngular.Controllers;
 using PoorClaresAngular.Models;
 using PoorClaresAngular.Interfaces;
