@@ -104,7 +104,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\PrayerRequestApiControllerUnitTests.cs" />
-    <Compile Include="Controllers\HomeControllerUnitTests.cs" />
     <Compile Include="JsonResultTestExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
