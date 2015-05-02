@@ -1,10 +1,10 @@
 ﻿{
     "References": [
-        { "Path": "../PoorClaresAngular/scripts/angular.js" },
-        { "Path": "../PoorClaresAngular/scripts/angular-route.js"},
-        { "Path": "../PoorClaresAngular/scripts/angular-animate.js"},
-        { "Path": "../PoorClaresAngular/scripts/angular-ui/ui-bootstrap-tpls.js"},
-        { "Path": "../PoorClaresAngular/scripts/angular-mocks.js"},
+        { "Path": "bower_components/angular/angular.js" },
+        { "Path": "bower_components/angular-route/angular-route.js"},
+        { "Path": "bower_components/angular-animate/angular-animate.js"},
+        { "Path": "bower_components/angular-mocks/angular-mocks.js"},
+        { "Path": "bower_components/angular-bootstrap/ui-bootstrap-tpls.js"},
         { "Path": "../PoorClaresAngular/js/app.js"},
         { "Path": "../PoorClaresAngular/js/controllers", "Include": "*.js"},
         { "Path": "../PoorClaresAngular/js/services", "Include": "*.js"}
