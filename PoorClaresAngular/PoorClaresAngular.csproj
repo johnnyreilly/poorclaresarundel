@@ -505,9 +505,5 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
-Doesnt work on appveyor
-    <Exec Command="npm run bower-install" />
-    <Exec Command="npm run build -- --mode $(ConfigurationName)" />
-
   -->
 </Project>
