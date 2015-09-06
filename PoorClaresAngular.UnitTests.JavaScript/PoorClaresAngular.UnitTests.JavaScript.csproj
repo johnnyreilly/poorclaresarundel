@@ -61,6 +61,9 @@
     <Content Include="js\services\prayerRequestService_tests.js" />
     <Content Include="js\services\siteSectionService_tests.js" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
