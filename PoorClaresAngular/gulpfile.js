@@ -135,7 +135,7 @@ gulp.task("styles-release", ["clean"/*, "install-bower-js-dependencies-into-proj
 
     gulpUtil.log("Copy across all files in config.styles to build/debug");
 
-    var bowerCss = gulp.src(getStyles());
+    var bowerCss = gulp.src(getStyles()).pipe(less());
     var appCss = gulp.src(config.styles).pipe(less());
 
     return eventStream.merge(bowerCss, appCss)
