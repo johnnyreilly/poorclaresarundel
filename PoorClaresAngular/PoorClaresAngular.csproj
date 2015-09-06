@@ -25,6 +25,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -263,6 +264,7 @@
     <Content Include="partials\header.html" />
     <Content Include="partials\home.html" />
     <Content Include="images\main\AfricanStClare.jpg" />
+    <Content Include="partials\main\prayerRequests.html" />
     <Content Include="partials\main\us.html" />
     <Content Include="partials\main\communityInterviewsWithSisters.html" />
     <Content Include="partials\main\workShop.html" />
