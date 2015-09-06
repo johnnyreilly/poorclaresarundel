@@ -484,8 +484,8 @@
   </PropertyGroup>
   <Target Name="GulpBuild" DependsOnTargets="CompileTypeScript">
     <Exec Command="npm install" />
-    <Exec Command="npm run bower-install" />
-    <Exec Command="npm run build -- --mode $(ConfigurationName)" />
+    <Exec Command="bower install" />
+    <Exec Command="gulp --mode $(ConfigurationName)" />
   </Target>
   <Target Name="GulpClean">
     <Exec Command="npm run clean" />
@@ -505,5 +505,9 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
+Doesnt work on appveyor
+    <Exec Command="npm run bower-install" />
+    <Exec Command="npm run build -- --mode $(ConfigurationName)" />
+
   -->
 </Project>
