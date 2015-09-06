@@ -276,7 +276,7 @@
     <Content Include="partials\main\prayerGuided.html" />
     <Content Include="partials\main\prayerIntroduction.html" />
     <Content Include="partials\main\communityFoundationsKenya.html" />
-    <Content Include="partials\main\communityAddressesPoorClareConvents.html" />
+    <Content Include="partials\main\miscAddressesPoorClareConvents.html" />
     <Content Include="partials\main\communityVocation.html" />
     <Content Include="partials\main\communitySistersMaria.html" />
     <Content Include="partials\main\communitySistersJoseph.html" />
