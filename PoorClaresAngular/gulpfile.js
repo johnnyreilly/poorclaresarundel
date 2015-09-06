@@ -13,7 +13,7 @@ var gulpUtil = require("gulp-util");
 var del = require("del");
 var wiredep = require("wiredep");
 var yargs = require("yargs").argv;
-var order = require("gulp-order");;//
+var order = require("gulp-order");
 var inject = require("gulp-inject");
 
 var config = require("./gulpfile.config.js");
@@ -24,12 +24,10 @@ gulpUtil.log(gulpUtil.colors.green("isDebug: " + isDebug));
 /**
  * Get the scripts or styles the app requires by combining bower dependencies and app dependencies
  * 
- * @param {string} jsOrCss Should be "js" or "css"
+ * @param {string} jsOrCss Should be "js" or "css" or "less"
  */
 function getScriptsOrStyles(jsOrCss) {
-
     var bowerScriptsOrStylesAbsolute = wiredep(config.wiredepOptions)[jsOrCss];
-
     var bowerScriptsOrStylesRelative = bowerScriptsOrStylesAbsolute.map(function makePathRelativeToCwd(file) {
         return path.relative('', file);
     });
@@ -72,7 +70,7 @@ function getScriptsStream(isDebug) {
  */
 function getStyles() {
 
-    return getScriptsOrStyles("css");
+    return getScriptsOrStyles("less");
 }
 
 

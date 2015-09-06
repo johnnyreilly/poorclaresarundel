@@ -4,7 +4,10 @@
   "description": "The website for http://www.poorclaresarundel.org",
   "main": "/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bower-install": "bower install",
+    "build": "gulp build",
+    "clean": "gulp clean"
   },
   "repository": {
     "type": "git",

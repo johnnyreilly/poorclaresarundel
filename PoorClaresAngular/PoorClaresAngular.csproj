@@ -484,11 +484,11 @@
   </PropertyGroup>
   <Target Name="GulpBuild" DependsOnTargets="CompileTypeScript">
     <Exec Command="npm install" />
-    <Exec Command="bower install" />
-    <Exec Command="gulp --mode $(ConfigurationName)" />
+    <Exec Command="npm run bower-install" />
+    <Exec Command="npm run build -- --mode $(ConfigurationName)" />
   </Target>
   <Target Name="GulpClean">
-    <Exec Command="gulp clean" />
+    <Exec Command="npm run clean" />
   </Target>
   <Target Name="CollectGulpOutput">
     <ItemGroup>
