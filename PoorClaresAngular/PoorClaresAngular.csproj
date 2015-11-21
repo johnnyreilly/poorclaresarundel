@@ -392,6 +392,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="index.html" />
+    <Content Include="Content\Lord have Mercy poster v1.pdf" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular.pubxml" />
