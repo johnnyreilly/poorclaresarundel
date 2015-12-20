@@ -14,12 +14,14 @@ var poorClaresApp;
                     success: true,
                     text: "Sending..."
                 };
-                this.prayerRequestService.sendPrayerRequest(prayerRequest.email, prayerRequest.prayFor).then(function (response) {
+                this.prayerRequestService.sendPrayerRequest(prayerRequest.email, prayerRequest.prayFor)
+                    .then(function (response) {
                     _this.message = {
                         success: response.success,
                         text: response.text
                     };
-                }).then(null, function (error) {
+                })
+                    .then(null, function (error) {
                     _this.message = {
                         success: false,
                         text: "Sorry your email was not sent"

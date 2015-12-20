@@ -19,6 +19,5 @@ angular.module("poorClaresApp.services").factory("siteSectionService", [
             getSiteSection: getSiteSection,
             determineSiteSection: determineSiteSection
         };
-    }
-]);
+    }]);
 //# sourceMappingURL=siteSectionService.js.map
