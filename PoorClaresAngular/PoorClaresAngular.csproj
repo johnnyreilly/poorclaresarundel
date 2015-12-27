@@ -202,51 +202,12 @@
     <Content Include="images\theConvent\Tiggers3.jpg" />
     <Content Include="images\theConvent\Tiggers4.jpg" />
     <TypeScriptCompile Include="js\app.ts" />
-    <Content Include="js\app.js">
-      <DependentUpon>app.ts</DependentUpon>
-    </Content>
-    <Content Include="js\app.js.map">
-      <DependentUpon>app.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="js\controllers\navController.ts" />
-    <Content Include="js\controllers\navController.js">
-      <DependentUpon>navController.ts</DependentUpon>
-    </Content>
-    <Content Include="js\controllers\navController.js.map">
-      <DependentUpon>navController.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="js\controllers\nunCarouselController.ts" />
     <TypeScriptCompile Include="js\controllers\prayerRequestController.ts" />
-    <Content Include="js\controllers\nunCarouselController.js">
-      <DependentUpon>nunCarouselController.ts</DependentUpon>
-    </Content>
-    <Content Include="js\controllers\prayerRequestController.js">
-      <DependentUpon>prayerRequestController.ts</DependentUpon>
-    </Content>
-    <Content Include="js\controllers\prayerRequestController.js.map">
-      <DependentUpon>prayerRequestController.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="js\controllers\mainController.ts" />
-    <Content Include="js\controllers\mainController.js">
-      <DependentUpon>mainController.ts</DependentUpon>
-    </Content>
-    <Content Include="js\controllers\mainController.js.map">
-      <DependentUpon>mainController.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="js\services\prayerRequestService.ts" />
-    <Content Include="js\services\prayerRequestService.js">
-      <DependentUpon>prayerRequestService.ts</DependentUpon>
-    </Content>
-    <Content Include="js\services\prayerRequestService.js.map">
-      <DependentUpon>prayerRequestService.ts</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="js\services\siteSectionService.ts" />
-    <Content Include="js\services\siteSectionService.js">
-      <DependentUpon>siteSectionService.ts</DependentUpon>
-    </Content>
-    <Content Include="js\services\siteSectionService.js.map">
-      <DependentUpon>siteSectionService.ts</DependentUpon>
-    </Content>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
@@ -309,9 +270,6 @@
     <Content Include="partials\theConvent\photoGallery.html" />
     <Content Include="chutzpah.json" />
     <Content Include="Content\Stylist_Life_in_a_convent.pdf" />
-    <Content Include="js\controllers\nunCarouselController.js.map">
-      <DependentUpon>nunCarouselController.ts</DependentUpon>
-    </Content>
     <Content Include="Content\site.css.map">
       <DependentUpon>site.css</DependentUpon>
     </Content>
