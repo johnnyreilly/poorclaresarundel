@@ -182,3 +182,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+PoorClaresAngular/js/**.js.map
+PoorClaresAngular/js/**.js
