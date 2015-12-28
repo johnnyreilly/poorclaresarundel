@@ -8,7 +8,7 @@ http://www.poorclaresarundel.org/beginningsFrancisPrayers
 http://www.poorclaresarundel.org/communityArundel
 http://www.poorclaresarundel.org/communityVocation
 http://www.poorclaresarundel.org/communityAddressesPoorClareConvents
-http://www.poorclaresarundel.org/Content/communityTripAroundHouse.pdf
+http://www.poorclaresarundel.org/pdfs/communityTripAroundHouse.pdf
 http://www.poorclaresarundel.org/communitySistersAnn
 http://www.poorclaresarundel.org/communitySistersClareAgnes
 http://www.poorclaresarundel.org/communitySistersClareRuva
@@ -17,13 +17,13 @@ http://www.poorclaresarundel.org/communitySistersGraca
 http://www.poorclaresarundel.org/communitySistersJoseph
 http://www.poorclaresarundel.org/communitySistersMaria
 http://www.poorclaresarundel.org/communityFoundationsKenya
-http://www.poorclaresarundel.org/Content/communityFoundationsHollington.pdf
+http://www.poorclaresarundel.org/pdfs/communityFoundationsHollington.pdf
 http://www.poorclaresarundel.org/prayerIntroduction
 http://www.poorclaresarundel.org/prayerOur
 http://www.poorclaresarundel.org/prayerGuided
 http://www.poorclaresarundel.org/workOur
 http://www.poorclaresarundel.org/workShop
-http://www.poorclaresarundel.org/Content/tripAroundGuestHouse.pdf
+http://www.poorclaresarundel.org/pdfs/tripAroundGuestHouse.pdf
 http://www.poorclaresarundel.org/miscFAQs
 http://www.poorclaresarundel.org/miscLinks
 http://www.poorclaresarundel.org/miscGlossary

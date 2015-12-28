@@ -49,7 +49,7 @@ function getScripts() {
 
     //gulpUtil.log(JSON.stringify(bowerScripts));
 
-    var scripts = bowerScripts.concat(config.scripts);
+    var scripts = [].concat(bowerScripts, config.scripts);
 
     return scripts;
 }
@@ -96,7 +96,7 @@ gulp.task("install-bower-css-dependencies-into-project", ["clean"], function () 
         .pipe(gulp.dest("./content/"));
 });
 
-gulp.task("scripts-debug", ["clean"/*, "install-bower-js-dependencies-into-project" */,"install-bower-css-dependencies-into-project"], function () {
+gulp.task("scripts-debug", ["clean", "install-bower-css-dependencies-into-project"], function () {
 
     gulpUtil.log("Copy across all JavaScript files to build/debug");
 
@@ -104,7 +104,7 @@ gulp.task("scripts-debug", ["clean"/*, "install-bower-js-dependencies-into-proje
         .pipe(gulp.dest(config.debugFolder));
 });
 
-gulp.task("scripts-release", ["clean"/*, "install-bower-js-dependencies-into-project"*/, "install-bower-css-dependencies-into-project"], function () {
+gulp.task("scripts-release", ["clean", "install-bower-css-dependencies-into-project"], function () {
 
     gulpUtil.log("Concatenate & Minify JS for release into a single file");
 
@@ -139,10 +139,10 @@ gulp.task("styles-release", ["clean"/*, "install-bower-js-dependencies-into-proj
     var appCss = gulp.src(config.styles).pipe(less());
 
     return eventStream.merge(bowerCss, appCss)
-        .pipe(concat("app.css"))                                   // Make a single file
-        .pipe(minifyCss())                                         // Make the file titchy tiny small
-        .pipe(rev())                                               // Suffix a version number to it
-        .pipe(gulp.dest(config.releaseFolder + "/" + config.css)); // Write single versioned file to build/release folder
+        .pipe(concat("app.css"))                // Make a single file
+        .pipe(minifyCss())                      // Make the file titchy tiny small
+        .pipe(rev())                            // Suffix a version number to it
+        .pipe(gulp.dest(config.releaseFolder)); // Write single versioned file to build/release folder
 });
 
 gulp.task("inject-debug", ["styles-debug", "scripts-debug"], function () {
@@ -154,9 +154,9 @@ gulp.task("inject-debug", ["styles-debug", "scripts-debug"], function () {
     return gulp
         .src(config.bootFile)
         .pipe(inject(
-                gulp.src([config.debugFolder + "**/*.{js,css}"], { read: false })
-                    .pipe(order(scriptsAndStyles))
-            ))
+                gulp.src([config.debugFolder + "**/*.{js,css}"], { read: false }).pipe(order(scriptsAndStyles)),
+                { relative: true, ignorePath: '/build/' })
+            )
         .pipe(gulp.dest(config.buildDir));
 });
 
@@ -166,14 +166,22 @@ gulp.task("inject-release", ["styles-release", "scripts-release"], function () {
 
     return gulp
         .src(config.bootFile)
-        .pipe(inject(gulp.src(config.releaseFolder + "**/*.{js,css}", { read: false }), { removeTags: true }))
+        .pipe(inject(gulp.src(config.releaseFolder + "**/*.{js,css}", { read: false }), { removeTags: true, ignorePath: '/build/' }))
+        .pipe(gulp.dest(config.buildDir));
+});
+
+gulp.task("static-files", ["clean"], function () {
+
+    gulpUtil.log("Copy across all files static files to build");
+
+    return gulp
+        .src(config.staticFiles, { base: config.base })
         .pipe(gulp.dest(config.buildDir));
 });
 
 gulp.task("build",
-    isDebug 
-        ? ["inject-debug"]
-        : ["inject-release"],
+    ["static-files",
+     isDebug ? "inject-debug" : "inject-release"],
     function () {
 
     });

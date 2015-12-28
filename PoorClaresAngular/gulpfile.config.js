@@ -9,12 +9,19 @@ var config = {
     buildDir: "./build/",
     debug: "debug",
     release: "release",
-    css: "css",
 
     bootFile: "index.html",
     bootjQuery: bower + "jquery/dist/jquery.min.js",
 
-    images: "images/**/*.{gif,jpg,png}",
+    staticFiles: [
+        "favicon.ico",
+        "googleb63c56db6d7860ff.html",
+        "sitemap.txt",
+        "fonts/**/*.*",
+        "images/**/*.{gif,jpg,png}",
+        "partials/**/*.html",
+        "pdfs/**/*.{pdf,doc,html}"
+    ],
 
     // The scripts we want Gulp to process in addition to bower dependencies
     scripts: [
@@ -25,7 +32,7 @@ var config = {
 
     // The styles we want Gulp to process
     styles: [
-        "content/site.less"
+        "css/site.less"
     ],
 
     wiredepOptions: {
