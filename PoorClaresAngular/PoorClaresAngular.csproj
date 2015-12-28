@@ -94,13 +94,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\prayerResponse.html" />
     <Content Include="Content\prayerResponse.txt" />
-    <Content Include="css\site.css">
-      <DependentUpon>site.less</DependentUpon>
-    </Content>
-    <Content Include="css\site.min.css">
-      <DependentUpon>site.css</DependentUpon>
-    </Content>
-    <Content Include="pdfs\workShopCardOrderForm.html" />
+    <Content Include="static\workShopCardOrderForm.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="googleb63c56db6d7860ff.html" />
@@ -125,11 +119,11 @@
     <Content Include="images\main\MotherAustinGibson.jpg" />
     <Content Include="images\main\MotherCampionFleet.jpg" />
     <Content Include="images\main\MotherClareCampbell.jpg" />
-    <Content Include="images\main\Page2CommunityAtPrayer.JPG" />
-    <Content Include="images\main\Page3SusannaAtPrayer.JPG" />
-    <Content Include="images\main\Page4ChapelGroupAtPrayer.JPG" />
-    <Content Include="images\main\Page5GroupOnLawn.JPG" />
-    <Content Include="images\main\Page6YohaanaInLibrary.JPG" />
+    <Content Include="images\main\Page2CommunityAtPrayer.jpg" />
+    <Content Include="images\main\Page3SusannaAtPrayer.jpg" />
+    <Content Include="images\main\Page4ChapelGroupAtPrayer.jpg" />
+    <Content Include="images\main\Page5GroupOnLawn.jpg" />
+    <Content Include="images\main\Page6YohaanaInLibrary.jpg" />
     <Content Include="images\main\Page7ProvidenceGroup.jpg" />
     <Content Include="images\main\prayerAt.jpg" />
     <Content Include="images\main\prayerOur1.jpg" />
@@ -216,12 +210,12 @@
     <Content Include="css\build.less" />
     <Content Include="css\global.less" />
     <Content Include="css\variables.less" />
-    <Content Include="pdfs\StraightPrayingWithClare.doc" />
-    <Content Include="pdfs\communityTripAroundHouse.pdf" />
-    <Content Include="pdfs\communityFoundationsHollington.pdf" />
-    <Content Include="pdfs\tripAroundGuestHouse.pdf" />
+    <Content Include="static\StraightPrayingWithClare.doc" />
+    <Content Include="static\communityTripAroundHouse.pdf" />
+    <Content Include="static\communityFoundationsHollington.pdf" />
+    <Content Include="static\tripAroundGuestHouse.pdf" />
     <Content Include="Content\IntroductoryDay.doc" />
-    <Content Include="pdfs\GuestHouse2009.pdf" />
+    <Content Include="static\GuestHouse2009.pdf" />
     <Content Include="partials\header.html" />
     <Content Include="partials\home.html" />
     <Content Include="images\main\AfricanStClare.jpg" />
@@ -269,10 +263,7 @@
     <Content Include="partials\theConvent\seekersAngela.html" />
     <Content Include="partials\theConvent\photoGallery.html" />
     <Content Include="chutzpah.json" />
-    <Content Include="pdfs\Stylist_Life_in_a_convent.pdf" />
-    <Content Include="css\site.css.map">
-      <DependentUpon>site.css</DependentUpon>
-    </Content>
+    <Content Include="static\Stylist_Life_in_a_convent.pdf" />
     <Content Include="bower.json" />
     <Content Include="package.json" />
     <Content Include="css\less\alerts.less" />
@@ -350,7 +341,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="index.html" />
-    <Content Include="pdfs\Lord have Mercy poster v1.pdf" />
+    <Content Include="static\Lord have Mercy poster v1.pdf" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular.pubxml" />
@@ -379,7 +370,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PrayerRequestApiController.cs" />
+    <Compile Include="Controllers\PrayerRequestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -16,7 +16,7 @@ angular.module("poorClaresApp.services").factory(
     ["$http",
     function ($http: ng.IHttpService): IPrayerRequestService {
 
-        var url = "/PrayerRequest";
+        var url = "/api/PrayerRequest";
 
         function sendPrayerRequest(email: string, prayFor: string) {
 

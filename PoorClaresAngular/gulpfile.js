@@ -47,8 +47,6 @@ function getScripts() {
         return scriptName.indexOf("bootstrap.js") === -1;
     });
 
-    //gulpUtil.log(JSON.stringify(bowerScripts));
-
     var scripts = [].concat(bowerScripts, config.scripts);
 
     return scripts;

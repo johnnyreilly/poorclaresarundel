@@ -8,9 +8,9 @@ using System.Web.Http.Results;
 namespace PoorClaresAngular.UnitTests.Controllers
 {
     [TestClass]
-    public class PrayerRequestApiControllerUnitTests
+    public class PrayerRequestControllerUnitTests
     {
-        private PrayerRequestApiController _controller;
+        private PrayerRequestController _controller;
         private Mock<IApplicationSettings> _applicationSettingsMock;
         private Mock<IMailer> _mailerMock;
 
@@ -20,7 +20,7 @@ namespace PoorClaresAngular.UnitTests.Controllers
             _applicationSettingsMock = new Mock<IApplicationSettings>();
             _mailerMock = new Mock<IMailer>();
 
-            _controller = new PrayerRequestApiController(_applicationSettingsMock.Object, _mailerMock.Object);
+            _controller = new PrayerRequestController(_applicationSettingsMock.Object, _mailerMock.Object);
         }
 
         [TestMethod]

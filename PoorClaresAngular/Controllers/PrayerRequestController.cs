@@ -8,22 +8,21 @@ using System.Web.Http;
 
 namespace PoorClaresAngular.Controllers
 {
-    public class PrayerRequestApiController : ApiController
+    public class PrayerRequestController : ApiController
     {
         private readonly IApplicationSettings _props;
         private readonly IMailer _mailer;
 
-        public PrayerRequestApiController() : this(new ApplicationSettings(), new Mailer())
+        public PrayerRequestController() : this(new ApplicationSettings(), new Mailer())
         {
         }
 
-        public PrayerRequestApiController(IApplicationSettings props, IMailer mailer)
+        public PrayerRequestController(IApplicationSettings props, IMailer mailer)
         {
             _props = props;
             _mailer = mailer;
         }
 
-        [Route("PrayerRequest")]
         [HttpPost]
         public IHttpActionResult SendPrayerRequest(PrayerRequest prayerRequest)
         {

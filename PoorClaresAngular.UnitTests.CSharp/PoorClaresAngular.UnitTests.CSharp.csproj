@@ -79,7 +79,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Controllers\PrayerRequestApiControllerUnitTests.cs" />
+    <Compile Include="Controllers\PrayerRequestControllerUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

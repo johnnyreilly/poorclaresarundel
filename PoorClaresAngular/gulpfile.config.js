@@ -20,7 +20,7 @@ var config = {
         "fonts/**/*.*",
         "images/**/*.{gif,jpg,png}",
         "partials/**/*.html",
-        "pdfs/**/*.{pdf,doc,html}"
+        "static/**/*.*"
     ],
 
     // The scripts we want Gulp to process in addition to bower dependencies
