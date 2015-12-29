@@ -17,7 +17,6 @@ var config = {
         "favicon.ico",
         "googleb63c56db6d7860ff.html",
         "sitemap.txt",
-        "fonts/**/*.*",
         "images/**/*.{gif,jpg,png}",
         "partials/**/*.html",
         "static/**/*.*"

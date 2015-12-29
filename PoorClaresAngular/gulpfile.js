@@ -28,9 +28,11 @@ gulpUtil.log(gulpUtil.colors.green("isDebug: " + isDebug));
  */
 function getScriptsOrStyles(jsOrCss) {
     var bowerScriptsOrStylesAbsolute = wiredep(config.wiredepOptions)[jsOrCss];
+    //console.log('bowerScriptsOrStylesAbsolute', JSON.stringify(bowerScriptsOrStylesAbsolute))
     var bowerScriptsOrStylesRelative = bowerScriptsOrStylesAbsolute.map(function makePathRelativeToCwd(file) {
         return path.relative('', file);
     });
+    //console.log('bowerScriptsOrStylesRelative', JSON.stringify(bowerScriptsOrStylesRelative))
 
     var appScriptsOrStyles = bowerScriptsOrStylesRelative.concat(jsOrCss === "js" ? config.scripts : []);
 
@@ -77,24 +79,12 @@ gulp.task("clean", function (cb) {
     gulpUtil.log("Delete installed bower assets and build folder");
 
     return del([
-        config.buildDir,
-        "./content/fonts",
-        "./content/less"
+        config.buildDir
     ], { force: false },
     cb);
 });
 
-gulp.task("install-bower-css-dependencies-into-project", ["clean"], function () {
-
-    return gulp
-        .src([
-            "./bower_components/bootstrap/fonts/*.*",
-            "./bower_components/bootstrap/less/**/*.less"
-        ], { base: "./bower_components/bootstrap" })
-        .pipe(gulp.dest("./content/"));
-});
-
-gulp.task("scripts-debug", ["clean", "install-bower-css-dependencies-into-project"], function () {
+gulp.task("scripts-debug", ["clean"], function () {
 
     gulpUtil.log("Copy across all JavaScript files to build/debug");
 
@@ -102,7 +92,7 @@ gulp.task("scripts-debug", ["clean", "install-bower-css-dependencies-into-projec
         .pipe(gulp.dest(config.debugFolder));
 });
 
-gulp.task("scripts-release", ["clean", "install-bower-css-dependencies-into-project"], function () {
+gulp.task("scripts-release", ["clean"], function () {
 
     gulpUtil.log("Concatenate & Minify JS for release into a single file");
 
@@ -114,7 +104,7 @@ gulp.task("scripts-release", ["clean", "install-bower-css-dependencies-into-proj
         .pipe(gulp.dest(config.releaseFolder));   // Write single versioned file to build/release folder
 });
 
-gulp.task("styles-debug", ["clean"/*, "install-bower-js-dependencies-into-project"*/, "install-bower-css-dependencies-into-project"], function () {
+gulp.task("styles-debug", ["clean"], function () {
 
     gulpUtil.log("Copy across all CSS files to build/debug");
 
@@ -129,7 +119,7 @@ gulp.task("styles-debug", ["clean"/*, "install-bower-js-dependencies-into-projec
         .pipe(gulp.dest(config.debugFolder));
 });
 
-gulp.task("styles-release", ["clean"/*, "install-bower-js-dependencies-into-project"*/, "install-bower-css-dependencies-into-project"], function () {
+gulp.task("styles-release", ["clean"], function () {
 
     gulpUtil.log("Copy across all files in config.styles to build/debug");
 
@@ -168,6 +158,15 @@ gulp.task("inject-release", ["styles-release", "scripts-release"], function () {
         .pipe(gulp.dest(config.buildDir));
 });
 
+gulp.task("fonts", ["clean"], function () {
+
+    gulpUtil.log("Copy across all files static files to build");
+
+    return gulp
+        .src("./bower_components/bootstrap/fonts/**/*.*", { base: "./bower_components/bootstrap/" })
+        .pipe(gulp.dest(config.buildDir));
+});
+
 gulp.task("static-files", ["clean"], function () {
 
     gulpUtil.log("Copy across all files static files to build");
@@ -178,7 +177,7 @@ gulp.task("static-files", ["clean"], function () {
 });
 
 gulp.task("build",
-    ["static-files",
+    ["fonts", "static-files",
      isDebug ? "inject-debug" : "inject-release"],
     function () {
 
