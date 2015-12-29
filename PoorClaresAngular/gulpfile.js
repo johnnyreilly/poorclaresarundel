@@ -4,7 +4,7 @@ var concat = require("gulp-concat");
 var ignore = require("gulp-ignore");
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
-var minifyCss = require("gulp-minify-css");
+var cssNano = require("gulp-cssnano");
 var uglify = require("gulp-uglify");
 var rev = require("gulp-rev");
 var path = require("path");
@@ -28,11 +28,9 @@ gulpUtil.log(gulpUtil.colors.green("isDebug: " + isDebug));
  */
 function getScriptsOrStyles(jsOrCss) {
     var bowerScriptsOrStylesAbsolute = wiredep(config.wiredepOptions)[jsOrCss];
-    //console.log('bowerScriptsOrStylesAbsolute', JSON.stringify(bowerScriptsOrStylesAbsolute))
     var bowerScriptsOrStylesRelative = bowerScriptsOrStylesAbsolute.map(function makePathRelativeToCwd(file) {
         return path.relative('', file);
     });
-    //console.log('bowerScriptsOrStylesRelative', JSON.stringify(bowerScriptsOrStylesRelative))
 
     var appScriptsOrStyles = bowerScriptsOrStylesRelative.concat(jsOrCss === "js" ? config.scripts : []);
 
@@ -133,7 +131,7 @@ gulp.task("styles-release", ["clean"], function () {
 
     return eventStream.merge(bowerCss, appCss)
         .pipe(concat("app.css"))                // Make a single file
-        .pipe(minifyCss())                      // Make the file titchy tiny small
+        .pipe(cssNano())                        // Make the file titchy tiny small
         .pipe(rev())                            // Suffix a version number to it
         .pipe(gulp.dest(config.releaseFolder)); // Write single versioned file to build/release folder
 });
