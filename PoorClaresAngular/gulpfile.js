@@ -74,14 +74,19 @@ function getStyles() {
 }
 
 
-gulp.task("clean", function (cb) {
+gulp.task("clean", function (done) {
 
-    gulpUtil.log("Delete installed bower assets and build folder");
+    gulpUtil.log("Delete installed build folder");
 
-    return del([
-        config.buildDir
-    ], { force: false },
-    cb);
+    del([config.buildDir], { force: false })
+      .then(function (paths) {
+          gulpUtil.log('Deleted files/folders:\n', paths.join('\n'));
+          done();
+      })
+      .catch(function (error) {
+          gulpUtil.log('Problem deleting:\n', error);
+          done(error);
+      });
 });
 
 gulp.task("scripts-debug", ["clean"], function () {
