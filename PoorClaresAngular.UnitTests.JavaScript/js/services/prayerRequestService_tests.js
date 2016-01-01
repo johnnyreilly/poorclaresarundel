@@ -24,7 +24,7 @@
             var stubResponse = { success: true, text: "Done!" };
 
             $httpBackend
-                .expectPOST("/PrayerRequest", { email: "johnny_reilly@hotmail.com", prayFor: "Me" })
+                .expectPOST("/api/PrayerRequest", { email: "johnny_reilly@hotmail.com", prayFor: "Me" })
                 .respond(200, stubResponse);
 
             // make the call
