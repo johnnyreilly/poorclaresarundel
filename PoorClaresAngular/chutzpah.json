@@ -1,10 +1,29 @@
 ﻿{
-    "References": [
-        { "Path": "scripts/angular.js" },
-        { "Path": "scripts/angular-route.js"},
-        { "Path": "scripts/angular-mocks.js"}
-    ],
-    "Tests": [
-        { "Path": "test", "Include": "*.js" },
-    ]
+  "Framework": "jasmine",
+  "References": [
+    { "Path": "bower_components/angular/angular.js" },
+    { "Path": "bower_components/angular-route/angular-route.js" },
+    { "Path": "bower_components/angular-animate/angular-animate.js" },
+    { "Path": "bower_components/angular-mocks/angular-mocks.js" },
+    { "Path": "bower_components/angular-bootstrap/ui-bootstrap-tpls.js" },
+    { "Path": "js/app.js" },
+    {
+      "Path": "js/controllers",
+      "Include": "*.js"
+    },
+    {
+      "Path": "js/services",
+      "Include": "*.js"
+    }
+  ],
+  "Compile": {
+    "Mode": "External",
+    "Extensions": [ ".ts" ]
+  },
+  "Tests": [
+    {
+      "Include": "**/*tests.ts",
+      "Path": "tests"
+    }
+  ]
 }

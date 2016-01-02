@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 module poorClaresApp.controllers {
-    class PrayerRequestController {
+    export class PrayerRequestController {
 
         static $inject = ["$scope", "prayerRequestService"];
         constructor(

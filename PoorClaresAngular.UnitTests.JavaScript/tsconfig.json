@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "filesGlob": [
+    "../PoorClaresAngular/typings/**/*.*.ts",
+    "!../PoorClaresAngular/typings/tsd.d.ts",
+    "../PoorClaresAngular/js/**/*.ts",
+    "**/*.ts"
+  ],
+  "compilerOptions": {
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true
+  },
+  "files": [
+    "../PoorClaresAngular/typings/angularjs/angular-animate.d.ts",
+    "../PoorClaresAngular/typings/angularjs/angular-mocks.d.ts",
+    "../PoorClaresAngular/typings/angularjs/angular-route.d.ts",
+    "../PoorClaresAngular/typings/angularjs/angular.d.ts",
+    "../PoorClaresAngular/typings/jasmine/jasmine.d.ts",
+    "../PoorClaresAngular/typings/jquery/jquery.d.ts",
+    "../PoorClaresAngular/js/app.ts",
+    "../PoorClaresAngular/js/controllers/mainController.ts",
+    "../PoorClaresAngular/js/controllers/navController.ts",
+    "../PoorClaresAngular/js/controllers/nunCarouselController.ts",
+    "../PoorClaresAngular/js/controllers/prayerRequestController.ts",
+    "../PoorClaresAngular/js/services/prayerRequestService.ts",
+    "../PoorClaresAngular/js/services/siteSectionService.ts",
+    "js/app_tests.ts",
+    "js/controllers/mainController_tests.ts",
+    "js/controllers/navController_tests.ts",
+    "js/controllers/prayerRequestController_tests.ts",
+    "js/services/prayerRequestService_tests.ts",
+    "js/services/siteSectionService_tests.ts"
+  ],
+  "exclude": [],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}

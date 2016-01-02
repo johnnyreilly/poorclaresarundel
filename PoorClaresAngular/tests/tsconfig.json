@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "filesGlob": [
+    "../typings/**/*.*.ts",
+    "!../typings/tsd.d.ts",
+    "../js/**/*.ts",
+    "**/*.ts"
+  ],
+  "compilerOptions": {
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true
+  },
+  "files": [
+    "../typings/angularjs/angular-animate.d.ts",
+    "../typings/angularjs/angular-mocks.d.ts",
+    "../typings/angularjs/angular-route.d.ts",
+    "../typings/angularjs/angular.d.ts",
+    "../typings/jasmine/jasmine.d.ts",
+    "../typings/jquery/jquery.d.ts",
+    "../js/app.ts",
+    "../js/controllers/mainController.ts",
+    "../js/controllers/navController.ts",
+    "../js/controllers/nunCarouselController.ts",
+    "../js/controllers/prayerRequestController.ts",
+    "../js/services/prayerRequestService.ts",
+    "../js/services/siteSectionService.ts",
+    "app_tests.ts",
+    "controllers/mainController_tests.ts",
+    "controllers/navController_tests.ts",
+    "controllers/prayerRequestController_tests.ts",
+    "services/prayerRequestService_tests.ts",
+    "services/siteSectionService_tests.ts"
+  ],
+  "exclude": [],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}
