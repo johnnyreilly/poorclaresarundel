@@ -227,8 +227,8 @@
     <Content Include="partials\main\miscGlossary.html" />
     <Content Include="partials\main\miscLinks.html" />
     <Content Include="partials\main\miscFAQs.html" />
-    <Content Include="partials\main\prayerGuided.html" />
-    <Content Include="partials\main\prayerIntroduction.html" />
+    <Content Include="partials\main\x_prayerGuided.html" />
+    <Content Include="partials\main\x_prayerIntroduction.html" />
     <Content Include="partials\main\communityFoundationsKenya.html" />
     <Content Include="partials\main\miscAddressesPoorClareConvents.html" />
     <Content Include="partials\main\communityVocation.html" />
