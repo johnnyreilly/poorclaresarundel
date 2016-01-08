@@ -94,6 +94,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\prayerResponse.html" />
     <Content Include="Content\prayerResponse.txt" />
+    <Content Include="images\main\crib.jpg" />
+    <Content Include="images\main\StClareStatue.jpg" />
+    <Content Include="images\main\strewnCross.jpg" />
     <Content Include="static\workShopCardOrderForm.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
