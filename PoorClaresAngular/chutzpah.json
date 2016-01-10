@@ -23,7 +23,7 @@
   "Tests": [
     {
       "Include": "**/*tests.ts",
-      "Path": "tests"
+      "Path": "js-tests"
     }
   ]
 }

@@ -186,4 +186,6 @@ FakesAssemblies/
 # Project specific
 PoorClaresAngular/js/**/*.js.map
 PoorClaresAngular/js/**/*.js
+PoorClaresAngular/js-tests/**/*.js.map
+PoorClaresAngular/js-tests/**/*.js
 npm-debug.log
