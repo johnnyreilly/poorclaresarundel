@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PoorClaresAngular.Controllers;
 using PoorClaresAngular.Models;
-using PoorClaresAngular.Interfaces;
+using PoorClaresAngular.Services;
 using Moq;
 using System.Web.Http.Results;
 

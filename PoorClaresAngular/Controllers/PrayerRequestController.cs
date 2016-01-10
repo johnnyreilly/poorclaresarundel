@@ -1,5 +1,4 @@
-﻿using PoorClaresAngular.Implementations;
-using PoorClaresAngular.Interfaces;
+﻿using PoorClaresAngular.Services;
 using PoorClaresAngular.Models;
 using System;
 using System.Diagnostics;

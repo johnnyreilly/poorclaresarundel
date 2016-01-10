@@ -310,10 +310,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\ApplicationSettings.cs" />
-    <Compile Include="Implementations\Mailer.cs" />
-    <Compile Include="Interfaces\IApplicationSettings.cs" />
-    <Compile Include="Interfaces\IMailer.cs" />
+    <Compile Include="Services\ApplicationSettings.cs" />
+    <Compile Include="Services\IApplicationSettings.cs" />
+    <Compile Include="Services\IMailer.cs" />
+    <Compile Include="Services\Mailer.cs" />
     <Compile Include="Models\PrayerRequestResponse.cs" />
     <Compile Include="Models\PrayerRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
