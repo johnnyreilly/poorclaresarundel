@@ -76,7 +76,7 @@ gulp.task("clean", function (done) {
 
     gulpUtil.log("Delete installed build folder");
 
-    del([config.buildDir], { force: false })
+    del([config.buildDir + "**/*"], { force: false })
       .then(function (paths) {
           gulpUtil.log('Deleted files/folders:\n', paths.join('\n'));
           done();
@@ -146,7 +146,7 @@ gulp.task("inject-debug", ["styles-debug", "scripts-debug"], function () {
         .src(config.bootFile)
         .pipe(inject(
                 gulp.src([config.debugFolder + "**/*.{js,css}"], { read: false }).pipe(order(scriptsAndStyles)),
-                { relative: true, ignorePath: '/build/' })
+                { relative: true, ignorePath: config.buildDir.substring(1) })
             )
         .pipe(gulp.dest(config.buildDir));
 });
@@ -157,7 +157,7 @@ gulp.task("inject-release", ["styles-release", "scripts-release"], function () {
 
     return gulp
         .src(config.bootFile)
-        .pipe(inject(gulp.src(config.releaseFolder + "**/*.{js,css}", { read: false }), { removeTags: true, ignorePath: '/build/' }))
+        .pipe(inject(gulp.src(config.releaseFolder + "**/*.{js,css}", { read: false }), { removeTags: true, ignorePath: config.buildDir.substring(1) }))
         .pipe(gulp.dest(config.buildDir));
 });
 
@@ -175,7 +175,7 @@ gulp.task("static-files", ["clean"], function () {
     gulpUtil.log("Copy across all files static files to build");
 
     return gulp
-        .src(config.staticFiles, { base: config.base })
+        .src(config.staticFiles)
         .pipe(gulp.dest(config.buildDir));
 });
 

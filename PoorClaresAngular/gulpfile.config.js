@@ -14,12 +14,7 @@ var config = {
     bootjQuery: bower + "jquery/dist/jquery.min.js",
 
     staticFiles: [
-        "favicon.ico",
-        "googleb63c56db6d7860ff.html",
-        "sitemap.txt",
-        "images/**/*.{gif,jpg,png}",
-        "partials/**/*.html",
-        "static/**/*.*"
+        "static-files/**/*.*"
     ],
 
     // The scripts we want Gulp to process in addition to bower dependencies
