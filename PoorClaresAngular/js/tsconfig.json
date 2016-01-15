@@ -7,12 +7,12 @@
     "**/*.ts"
   ],
   "compilerOptions": {
-    "inlineSourceMap": false,
-    "inlineSources": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "noImplicitAny": false,
     "preserveConstEnums": true,
     "removeComments": false,
-    "sourceMap": true
+    "sourceMap": false
   },
   "files": [
     "../typings/angularjs/angular-animate.d.ts",

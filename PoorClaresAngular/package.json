@@ -8,7 +8,7 @@
     "bower-install": "bower install",
     "build": "gulp build",
     "clean": "gulp clean",
-    "ts": "tsc"
+    "ts": "cd js && tsc && cd ../"
   },
   "repository": {
     "type": "git",
