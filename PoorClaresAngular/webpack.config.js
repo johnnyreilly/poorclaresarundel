@@ -1,0 +1,46 @@
+/* eslint-disable no-var, strict, prefer-arrow-callback */
+'use strict';
+
+var path = require('path');
+
+module.exports = {
+  cache: true,
+  entry: {
+    main: './src/main.ts',
+
+    // common dependencies bundled together packaged with CommonsChunkPlugin in gulp/webpack.js
+    vendor: [
+      'babel-polyfill',
+      'angular',
+      'angular-animate',
+      'angular-route',
+      'angular-ui-bootstrap'
+    ]
+  },
+  output: {
+    path: path.resolve(__dirname, './dist/scripts'),
+    filename: '[name].js',
+    chunkFilename: '[chunkhash].js'
+  },
+  module: {
+    loaders: [{
+      test: /\.ts(x?)$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader?presets[]=es2015!ts-loader'
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015']
+      }
+    }]
+  },
+  plugins: [
+    // Check gulp/webpack.js for plugins
+  ],
+  resolve: {
+    // Add `.ts` and `.tsx` as a resolvable extension.
+    extensions: ['', '.ts', '.tsx', '.js']
+  },
+};

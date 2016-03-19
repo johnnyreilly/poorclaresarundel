@@ -1,0 +1,45 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "es2015",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es6"
+  },
+  "filesGlob": [
+    "../typings/**/*.*.ts",
+    "!../typings/tsd.d.ts",
+    "../src/**/*.ts",
+    "**/*.ts"
+  ],
+  "files": [
+    "../typings/angularjs/angular-animate.d.ts",
+    "../typings/angularjs/angular-mocks.d.ts",
+    "../typings/angularjs/angular-route.d.ts",
+    "../typings/angularjs/angular.d.ts",
+    "../typings/jasmine/jasmine.d.ts",
+    "../typings/jquery/jquery.d.ts",
+    "../src/app.ts",
+    "../src/controllers/mainController.ts",
+    "../src/controllers/navController.ts",
+    "../src/controllers/nunCarouselController.ts",
+    "../src/controllers/prayerRequestController.ts",
+    "../src/main.ts",
+    "../src/services/prayerRequestService.ts",
+    "../src/services/siteSectionService.ts",
+    "app.tests.ts",
+    "controllers/mainController.tests.ts",
+    "controllers/navController.tests.ts",
+    "controllers/prayerRequestController.tests.ts",
+    "services/prayerRequestService.tests.ts",
+    "services/siteSectionService.tests.ts"
+  ],
+  "exclude": [],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}

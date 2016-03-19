@@ -1,10 +1,9 @@
 write-host "Present working directory: $($pwd)"
 
-# $testsuites = [xml](get-content .\test-results\*.xml)
-$testsuites = [xml](get-content .\chutzpah-results.xml)
+$testsuites = [xml](get-content .\test-results\*.xml)
 $anyFailures = $FALSE
 
-foreach ($testsuite in $testsuites.testsuites.testsuite) {
+foreach ($testsuite in $testsuites.testsuite) {
 
     write-host " $($testsuite.name)"
 
