@@ -28,8 +28,8 @@ function getMainController($controller: Function, dependencies: {}) {
     return $controller(mainControllerName, dependencies) as MainController
 }
 
-﻿describe("Controllers ->", () => {
-    describe("MainController ->", () => {
+﻿describe("Controllers", () => {
+    describe("MainController", () => {
         it("should call siteSectionService.determineSiteSection with 'theConvent'", () => {
             const { $controller, $location, siteSectionService } = getInjectable();
             const path = "/theConvent/";

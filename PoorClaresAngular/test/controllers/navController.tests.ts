@@ -36,8 +36,8 @@ function getNavController($controller: Function, dependencies: {}) {
     return $controller(navControllerName, dependencies) as NavController
 }
 
-﻿describe("Controllers ->", () => {
-    describe("NavController ->", () => {
+﻿describe("Controllers", () => {
+    describe("NavController", () => {
         it("should set the default value of isCollapsed", () => {
             const { $controller, $scope } = getInjectable();
             const controller = getNavController($controller, { $scope });

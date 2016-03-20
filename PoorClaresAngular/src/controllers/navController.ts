@@ -35,8 +35,7 @@ export class NavController {
 
         $rootScope.$on("$routeChangeStart", (event, current, previous, rejection) => this.isCollapsed = true);
         $rootScope.$on("$routeChangeSuccess", (event, current, previous, rejection) => $window.ga("send", "pageview", { page: $location.path() }));
-        $rootScope.$on("$routeChangeError", (event, current, previous, rejection) => {
-            });
+        $rootScope.$on("$routeChangeError", (event, current, previous, rejection) => { });
     }
 
     get showMain() {

@@ -34,8 +34,8 @@ function getPrayerRequestController($controller: Function, dependencies: {}) {
     return $controller(prayerRequestControllerName, dependencies) as PrayerRequestController
 }
 
-﻿describe("Controllers ->", () => {
-    describe("PrayerRequestController ->", () => {
+﻿describe("Controllers", () => {
+    describe("PrayerRequestController", () => {
         it("should set the message to 'Sending...'", () => {
             const { $controller, $scope, $q, prayerRequestService } = getInjectable();
             spyOn(prayerRequestService, "sendPrayerRequest").and.returnValue($q.when());
