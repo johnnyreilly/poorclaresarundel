@@ -382,9 +382,9 @@
   </Target>
   <Target Name="CollectGulpOutput">
     <ItemGroup>
-      <_CustomFiles Include="build\**\*" />
+      <_CustomFiles Include="dist\**\*" />
       <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
-        <DestinationRelativePath>build\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+        <DestinationRelativePath>dist\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
     </ItemGroup>
     <Message Text="CollectGulpOutput list: %(_CustomFiles.Identity)" />
