@@ -38,9 +38,7 @@ before_test:
 
     npm run test
 
-    cd ../
-
-    ./registerTestResults.ps1
+    ../registerTestResults.ps1
 
 deploy:
 - provider: WebDeploy
