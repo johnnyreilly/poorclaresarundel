@@ -34,6 +34,8 @@ artifacts:
 
 before_test:
 - ps: >-
+    cd PoorClaresAngular
+
     npm run test
 
     ./registerTestResults.ps1

@@ -41,7 +41,7 @@ gulp.task('run-tests', ['build-js'], function (done) {
     tests.run(done);
 });
 
-gulp.task('build-release', ['build-less', 'build-js', 'build-other', 'lint', 'run-tests'], function () {
+gulp.task('build-release', ['build-less', 'build-js', 'build-other', 'lint'], function () {
     inject.build();
 });
 
