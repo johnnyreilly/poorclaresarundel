@@ -45,7 +45,7 @@ deploy:
   server: https://poorclareses6.scm.azurewebsites.net:443/msdeploy.axd?site=poorclareses6
   website: poorclareses6
   username:
-    secure: marjZFa7ATNRbBwFShTL4/lRBvV03BaC3llRoLGoaEk=
+    secure: gwVlMQC4t5Fu813QhQPeSA==
   password:
     secure: zZbIoYIgpctxT3oR6Y04uR/l208R0oVRNw6PUuCsPXGqLR9mHdby3756cjZB9b6WF8+hZldzBAwmZmw9861n9w==
   remove_files: true
