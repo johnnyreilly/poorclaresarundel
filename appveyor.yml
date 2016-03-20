@@ -42,8 +42,8 @@ before_test:
 
 deploy:
 - provider: WebDeploy
-  server: https://poorclareses6.scm.azurewebsites.net:443/msdeploy.axd?site=poorclareses6
-  website: poorclareses6
+  server: https://poorclaresangular.scm.azurewebsites.net:443/msdeploy.axd?site=poorclaresangular
+  website: poorclaresangular
   username:
     secure: havqx5eDApXZM/pv9T5Na4ghKRUS0CctLvqAD8rvwmE=
   password:
