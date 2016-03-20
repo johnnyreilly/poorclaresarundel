@@ -24,19 +24,19 @@ describe("Routes", () => {
         it("should map the root url to the home screen", () => {
             const { $route } = getInjectable();
             expect($route.routes["/"].controller).toBe("MainController");
-            expect($route.routes["/"].templateUrl).toMatch("partials/home.html");
+            expect($route.routes["/"].templateUrl).toMatch("templates/home.html");
         });
 
         it("should map urls that start '/theConvent/' to 'the Convent' site section", () => {
             const { $route } = getInjectable();
             expect($route.routes["/theConvent/:view"].controller).toBe("MainController");
-            expect($route.routes["/theConvent/:view"].templateUrl({})).toMatch("partials/theConvent/home.html");
+            expect($route.routes["/theConvent/:view"].templateUrl({})).toMatch("templates/theConvent/home.html");
         });
 
         it("should map urls to the main site section", () => {
             const { $route } = getInjectable();
             expect($route.routes["/:view"].controller).toBe("MainController");
-            expect($route.routes["/:view"].templateUrl({})).toMatch("partials/main/home.html");
+            expect($route.routes["/:view"].templateUrl({})).toMatch("templates/main/home.html");
         });
 
         it("should redirect other urls to the home screen", () => {

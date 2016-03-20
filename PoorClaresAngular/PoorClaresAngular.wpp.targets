@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0"
          xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ExcludeFromPackageFolders Include="css;fonts;images;partials;static">
+    <ExcludeFromPackageFolders Include="styles;static-files">
       <FromTarget>DoNotDeployThis</FromTarget>
     </ExcludeFromPackageFolders>
   </ItemGroup>

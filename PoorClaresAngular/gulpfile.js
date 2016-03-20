@@ -63,7 +63,7 @@ gulp.task('watch', ['delete-dist-contents'], function (done) {
       webpack.watch(),
       less.watch()
     ]).then(function () {
-        gutil.log('Now that initial assets (js and css) are generated inject *could* start...');
+        gutil.log('Now that initial assets (js and css) are generated injection starts...');
         inject.watch();
         done();
     }).catch(function (error) {

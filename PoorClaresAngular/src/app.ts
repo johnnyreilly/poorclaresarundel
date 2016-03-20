@@ -41,17 +41,17 @@ export function registerAndStartApp() {
 
           function getTheConventTemplateUrl(params: any) {
               var view = params.view || "home";
-              return "partials/theConvent/" + view + ".html" + cacheBuster;
+              return "templates/theConvent/" + view + ".html" + cacheBuster;
           }
 
           function getMainTemplateUrl(params: any) {
               var view = params.view || "home";
-              return "partials/main/" + view + ".html" + cacheBuster;
+              return "templates/main/" + view + ".html" + cacheBuster;
           }
 
           $routeProvider.
           when("/", {
-              templateUrl: "partials/home.html" + cacheBuster,
+              templateUrl: "templates/home.html" + cacheBuster,
               controller: mainControllerName
           }).
           when("/theConvent/:view", {

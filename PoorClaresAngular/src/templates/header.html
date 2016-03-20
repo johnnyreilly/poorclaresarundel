@@ -1,0 +1,4 @@
+﻿<div class="container" ng-controller="NavController as vm">
+    <div ng-if="vm.showMain" ng-include="'templates/main/navbar.html' + cacheBuster"></div>
+    <div ng-if="vm.showTheConvent" ng-include="'templates/theConvent/navbar.html' + cacheBuster"></div>
+</div>
