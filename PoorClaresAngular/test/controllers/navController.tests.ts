@@ -1,6 +1,6 @@
 import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from '../../src/app';
 import { SiteSectionService } from '../../src/services/siteSectionService';
-import { navControllerName, NavController, INavControllerScope, IWindowWithAnalyticsService } from '../../src/controllers/navController';
+import { navControllerName, NavController, IWindowWithAnalyticsService } from '../../src/controllers/navController';
 
 registerAndStartApp();
 
@@ -9,7 +9,7 @@ function getInjectable() {
 
     let $controller: Function;
 
-    let $scope: INavControllerScope;
+    let $scope: ng.IScope;
     let $rootScope: ng.IRootScopeService;
     let siteSectionService: SiteSectionService;
     let $location: ng.ILocationService;
@@ -24,7 +24,7 @@ function getInjectable() {
     ) => {
         $controller = _$controller_;
         $rootScope = _$rootScope_;
-        $scope = $rootScope.$new() as INavControllerScope;
+        $scope = $rootScope.$new();
         siteSectionService = _siteSectionService_;
         $location = _$location_;
     });
@@ -42,24 +42,24 @@ function getNavController($controller: Function, dependencies: {}) {
             const { $controller, $scope } = getInjectable();
             const controller = getNavController($controller, { $scope });
 
-            expect($scope.isCollapsed).toBe(true);
+            expect(controller.isCollapsed).toBe(true);
         });
 
         it("should set the default value of siteSection", () => {
             const { $controller, $scope } = getInjectable();
             const controller = getNavController($controller, { $scope });
 
-            expect($scope.siteSection).toBe("home");
+            expect(controller.siteSection).toBe("home");
         });
 
         it("should toggle the value of isCollapsed when toggleCollapsed is called", () => {
             const { $controller, $scope } = getInjectable();
             const controller = getNavController($controller, { $scope });
-            const isCollapsed = $scope.isCollapsed;
+            const isCollapsed = controller.isCollapsed;
 
-            $scope.toggleCollapsed();
+            controller.toggleCollapsed();
 
-            expect($scope.isCollapsed).toBe(!isCollapsed);
+            expect(controller.isCollapsed).toBe(!isCollapsed);
         });
 
         it("should watch for changes to the siteSection value", () => {
@@ -73,18 +73,18 @@ function getNavController($controller: Function, dependencies: {}) {
             siteSectionService.siteSection = newSiteSection;
             $scope.$apply();
 
-            expect($scope.siteSection).toBe(newSiteSection);
+            expect(controller.siteSection).toBe(newSiteSection);
         });
 
         it("should set isCollapsed to true on $routeChangeStart event", function () {
             const { $controller, $rootScope, $scope } = getInjectable();
             const controller = getNavController($controller, { $scope });
 
-            $scope.isCollapsed = false;
+            controller.isCollapsed = false;
 
             $rootScope.$broadcast("$routeChangeStart", null);
 
-            expect($scope.isCollapsed).toBe(true);
+            expect(controller.isCollapsed).toBe(true);
         });
 
         it("should send a pageview to Google Analytics on $routeChangeSuccess event", function () {

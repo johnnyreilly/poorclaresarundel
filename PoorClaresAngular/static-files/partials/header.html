@@ -1,9 +1,9 @@
-﻿<div class="container" ng-controller="NavController" ng-switch on="siteSection">
-    <div ng-switch-when="main">
+﻿<div class="container" ng-controller="NavController as vm">
+    <div ng-if="vm.showMain">
         <div ng-include="'partials/main/navbar.html' + cacheBuster"></div>
     </div>
 
-    <div ng-switch-when="theConvent">
+    <div ng-if="vm.showTheConvent">
         <div ng-include="'partials/theConvent/navbar.html' + cacheBuster"></div>
     </div>
 </div>

@@ -27,7 +27,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -99,28 +99,19 @@
     <Content Include="Global.asax" />
     <Content Include="gulpfile.config.js" />
     <Content Include="gulpfile.js" />
-    <TypeScriptCompile Include="js\app.ts" />
-    <TypeScriptCompile Include="js\controllers\navController.ts" />
-    <TypeScriptCompile Include="js\controllers\nunCarouselController.ts" />
-    <TypeScriptCompile Include="js\controllers\prayerRequestController.ts" />
-    <TypeScriptCompile Include="js\controllers\mainController.ts" />
-    <TypeScriptCompile Include="js\services\prayerRequestService.ts" />
-    <TypeScriptCompile Include="js\services\siteSectionService.ts" />
+    <Content Include="karma.conf.js" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="css\site.less" />
-    <Content Include="css\bootswatch.less" />
-    <Content Include="css\build.less" />
-    <Content Include="css\variables.less" />
     <Content Include="Content\IntroductoryDay.doc" />
     <Content Include="bower.json" />
     <Content Include="package.json" />
-    <Content Include="index.html" />
     <Content Include="PoorClaresAngular.wpp.targets" />
+    <Content Include="webpack.config.js" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular.pubxml" />
+    <Content Include="src\index.html" />
     <Content Include="static-files\favicon.ico" />
     <Content Include="static-files\googleb63c56db6d7860ff.html" />
     <Content Include="static-files\images\door.jpg" />
@@ -270,10 +261,9 @@
     <Content Include="static-files\partials\theConvent\why.html" />
     <Content Include="static-files\sitemap.txt" />
     <Content Include="static-files\static\workShopCardOrderForm.html" />
+    <Content Include="test\main.js" />
     <Content Include="tsd.json" />
-    <Content Include="js\tsconfig.json" />
     <Content Include="chutzpah.json" />
-    <Content Include="js-tests\tsconfig.json" />
     <Content Include="static-files\static\communityFoundationsHollington.pdf" />
     <Content Include="static-files\static\communityTripAroundHouse.pdf" />
     <Content Include="static-files\static\GuestHouse2009.pdf" />
@@ -281,6 +271,12 @@
     <Content Include="static-files\static\StraightPrayingWithClare.doc" />
     <Content Include="static-files\static\Stylist_Life_in_a_convent.pdf" />
     <Content Include="static-files\static\tripAroundGuestHouse.pdf" />
+    <Content Include="src\tsconfig.json" />
+    <Content Include="styles\bootswatch.less" />
+    <Content Include="styles\build.less" />
+    <Content Include="styles\main.less" />
+    <Content Include="styles\variables.less" />
+    <Content Include="test\tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -288,12 +284,20 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <TypeScriptCompile Include="js-tests\app_tests.ts" />
-    <TypeScriptCompile Include="js-tests\controllers\mainController_tests.ts" />
-    <TypeScriptCompile Include="js-tests\controllers\navController_tests.ts" />
-    <TypeScriptCompile Include="js-tests\controllers\prayerRequestController_tests.ts" />
-    <TypeScriptCompile Include="js-tests\services\prayerRequestService_tests.ts" />
-    <TypeScriptCompile Include="js-tests\services\siteSectionService_tests.ts" />
+    <TypeScriptCompile Include="src\app.ts" />
+    <TypeScriptCompile Include="src\controllers\mainController.ts" />
+    <TypeScriptCompile Include="src\controllers\navController.ts" />
+    <TypeScriptCompile Include="src\controllers\nunCarouselController.ts" />
+    <TypeScriptCompile Include="src\controllers\prayerRequestController.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\services\prayerRequestService.ts" />
+    <TypeScriptCompile Include="src\services\siteSectionService.ts" />
+    <TypeScriptCompile Include="test\app.tests.ts" />
+    <TypeScriptCompile Include="test\controllers\mainController.tests.ts" />
+    <TypeScriptCompile Include="test\controllers\navController.tests.ts" />
+    <TypeScriptCompile Include="test\controllers\prayerRequestController.tests.ts" />
+    <TypeScriptCompile Include="test\services\prayerRequestService.tests.ts" />
+    <TypeScriptCompile Include="test\services\siteSectionService.tests.ts" />
     <TypeScriptCompile Include="typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="typings\angularjs\angular-mocks.d.ts" />
     <TypeScriptCompile Include="typings\angularjs\angular-route.d.ts" />

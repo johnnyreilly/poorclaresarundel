@@ -34,10 +34,6 @@ export function registerAndStartApp() {
       controllersModuleName,
       servicesModuleName
   ])
-  .config(['$animateProvider',
-      function ($animateProvider: ng.animate.IAnimateProvider) {
-          $animateProvider.classNameFilter(/carousel/);
-      }])
   .config(["$routeProvider", "$locationProvider",
       function ($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
 
