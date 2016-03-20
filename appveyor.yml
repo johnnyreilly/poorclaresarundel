@@ -6,7 +6,7 @@ before_build:
 - cmd: >-
     nuget restore PoorClaresAngular.sln
 
-    npm install -g bower
+    npm -v
 
     npm install -g gulp
 

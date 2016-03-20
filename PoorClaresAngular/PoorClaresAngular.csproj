@@ -104,7 +104,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\IntroductoryDay.doc" />
-    <Content Include="bower.json" />
     <Content Include="package.json" />
     <Content Include="PoorClaresAngular.wpp.targets" />
     <Content Include="webpack.config.js" />
