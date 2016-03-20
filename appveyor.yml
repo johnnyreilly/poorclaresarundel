@@ -38,14 +38,16 @@ before_test:
 
     npm run test
 
+    cd ../
+
     ./registerTestResults.ps1
 
-#deploy:
-#- provider: WebDeploy
-#  server: https://poorclaresangular.scm.azurewebsites.net:443/msdeploy.axd?site=PoorClaresAngular
-#  website: PoorClaresAngular
-#  username:
-#    secure: havqx5eDApXZM/pv9T5Na4ghKRUS0CctLvqAD8rvwmE=
-#  password:
-#    secure: OfdyJRli28SPmISEI9TFL6IrCMr5DY1iNkXfRP2NGxSk2ATEwb4q9W+Bm4P9G3qG3L5JSChcYMAm4Cb2dnlxWQ==
-#  remove_files: true
+deploy:
+- provider: WebDeploy
+  server: https://poorclareses6.scm.azurewebsites.net:443/msdeploy.axd?site=poorclareses6
+  website: poorclareses6
+  username:
+    secure: havqx5eDApXZM/pv9T5Na4ghKRUS0CctLvqAD8rvwmE=
+  password:
+    secure: OfdyJRli28SPmISEI9TFL6IrCMr5DY1iNkXfRP2NGxSk2ATEwb4q9W+Bm4P9G3qG3L5JSChcYMAm4Cb2dnlxWQ==
+  remove_files: true
