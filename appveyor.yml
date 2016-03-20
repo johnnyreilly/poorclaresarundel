@@ -42,18 +42,20 @@ before_test:
 
 deploy:
 - provider: WebDeploy
-  server: https://poorclareses6.scm.azurewebsites.net:443/msdeploy.axd?site=poorclareses6
-  website: poorclareses6
+  server: https://poorclaresangular.scm.azurewebsites.net:443/msdeploy.axd?site=poorclaresangular
+  website: poorclaresangular
   username:
-    secure: gwVlMQC4t5Fu813QhQPeSA==
+    secure: havqx5eDApXZM/pv9T5Na4ghKRUS0CctLvqAD8rvwmE=
   password:
-    secure: zZbIoYIgpctxT3oR6Y04uR/l208R0oVRNw6PUuCsPXGqLR9mHdby3756cjZB9b6WF8+hZldzBAwmZmw9861n9w==
+    secure: OfdyJRli28SPmISEI9TFL6IrCMr5DY1iNkXfRP2NGxSk2ATEwb4q9W+Bm4P9G3qG3L5JSChcYMAm4Cb2dnlxWQ==
   remove_files: true
+
+## UAT
 #- provider: WebDeploy
-#  server: https://poorclaresangular.scm.azurewebsites.net:443/msdeploy.axd?site=poorclaresangular
-#  website: poorclaresangular
+#  server: https://poorclareses6.scm.azurewebsites.net:443/msdeploy.axd?site=poorclareses6
+#  website: poorclareses6
 #  username:
-#    secure: havqx5eDApXZM/pv9T5Na4ghKRUS0CctLvqAD8rvwmE=
+#    secure: gwVlMQC4t5Fu813QhQPeSA==
 #  password:
-#    secure: OfdyJRli28SPmISEI9TFL6IrCMr5DY1iNkXfRP2NGxSk2ATEwb4q9W+Bm4P9G3qG3L5JSChcYMAm4Cb2dnlxWQ==
+#    secure: zZbIoYIgpctxT3oR6Y04uR/l208R0oVRNw6PUuCsPXGqLR9mHdby3756cjZB9b6WF8+hZldzBAwmZmw9861n9w==
 #  remove_files: true
