@@ -34,7 +34,7 @@ artifacts:
 
 before_test:
 - ps: >-
-    ./runJavaScriptTests.ps1
+    npm run test
 
     ./registerTestResults.ps1
 
