@@ -11,18 +11,17 @@
     "target": "es6"
   },
   "filesGlob": [
-    "../typings/**/*.*.ts",
-    "!../typings/tsd.d.ts",
+    "../typings/browser/**/*.*.ts",
     "../src/**/*.ts",
     "**/*.ts"
   ],
   "files": [
-    "../typings/angularjs/angular-animate.d.ts",
-    "../typings/angularjs/angular-mocks.d.ts",
-    "../typings/angularjs/angular-route.d.ts",
-    "../typings/angularjs/angular.d.ts",
-    "../typings/jasmine/jasmine.d.ts",
-    "../typings/jquery/jquery.d.ts",
+    "../typings/browser/ambient/angular-animate/index.d.ts",
+    "../typings/browser/ambient/angular-mocks/index.d.ts",
+    "../typings/browser/ambient/angular-route/index.d.ts",
+    "../typings/browser/ambient/angular/index.d.ts",
+    "../typings/browser/ambient/jasmine/index.d.ts",
+    "../typings/browser/ambient/jquery/index.d.ts",
     "../src/app.ts",
     "../src/controllers/mainController.ts",
     "../src/controllers/navController.ts",
