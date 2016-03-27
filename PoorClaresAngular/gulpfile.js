@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var eslint = require('gulp-eslint');
+var tslint = require("gulp-tslint");
 var yargs = require("yargs").argv;
 
 var less = require('./gulp/less');
@@ -15,7 +16,8 @@ var inject = require('./gulp/inject');
 
 var isDebug = yargs.mode === "Debug";
 
-var lintSrcs = ['./gulp/**/*.js'];
+var eslintSrcs = ['./gulp/**/*.js'];
+var tslintSrcs = ['./src/**/*.ts', './test/**/*.ts'];
 
 gulp.task('delete-dist-contents', function (done) {
     clean.run(done);
@@ -41,7 +43,7 @@ gulp.task('run-tests', ['build-js'], function (done) {
     tests.run(done);
 });
 
-gulp.task('build-release', ['build-less', 'build-js', 'build-other', 'lint'], function () {
+gulp.task('build-release', ['build-less', 'build-js', 'build-other', 'eslint', 'tslint'], function () {
     inject.build();
 });
 
@@ -51,10 +53,16 @@ gulp.task('build', isDebug ? [] : ['build-release'], function () {
     }
 });
 
-gulp.task('lint', function () {
-    return gulp.src(lintSrcs)
+gulp.task('eslint', function () {
+    return gulp.src(eslintSrcs)
       .pipe(eslint())
       .pipe(eslint.format());
+});
+
+gulp.task('tslint', function () {
+    return gulp.src(tslintSrcs)
+      .pipe(tslint())
+      .pipe(tslint.report("verbose"))
 });
 
 gulp.task('watch', ['delete-dist-contents'], function (done) {
@@ -70,7 +78,8 @@ gulp.task('watch', ['delete-dist-contents'], function (done) {
         gutil.log('Problem generating initial assets (js and css)', error);
     });
 
-    gulp.watch(lintSrcs, ['lint']);
+    gulp.watch(eslintSrcs, ['eslint']);
+    gulp.watch(tslintSrcs, ['tslint']);
     staticFiles.watch();
     tests.watch();
 });

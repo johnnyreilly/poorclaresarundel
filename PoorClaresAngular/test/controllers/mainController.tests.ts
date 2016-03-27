@@ -1,6 +1,6 @@
-import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from '../../src/app';
-import { SiteSectionService } from '../../src/services/siteSectionService';
-import { mainControllerName, MainController } from '../../src/controllers/mainController';
+import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from "../../src/app";
+import { SiteSectionService } from "../../src/services/siteSectionService";
+import { mainControllerName, MainController } from "../../src/controllers/mainController";
 
 registerAndStartApp();
 
@@ -25,12 +25,12 @@ function getInjectable() {
 }
 
 function getMainController($controller: Function, dependencies: {}) {
-    return $controller(mainControllerName, dependencies) as MainController
+    return $controller(mainControllerName, dependencies) as MainController;
 }
 
 ﻿describe("Controllers", () => {
     describe("MainController", () => {
-        it("should call siteSectionService.determineSiteSection with 'theConvent'", () => {
+        it('should call siteSectionService.determineSiteSection with "theConvent"', () => {
             const { $controller, $location, siteSectionService } = getInjectable();
             const path = "/theConvent/";
             spyOn($location, "path").and.returnValue(path);

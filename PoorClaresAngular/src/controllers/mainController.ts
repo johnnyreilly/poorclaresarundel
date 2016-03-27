@@ -1,4 +1,4 @@
-import { SiteSectionService } from '../services/siteSectionService';
+import { SiteSectionService } from "../services/siteSectionService";
 
 export const mainControllerName = "MainController";
 export class MainController {

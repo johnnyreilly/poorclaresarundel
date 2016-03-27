@@ -1,14 +1,14 @@
-import * as angular from 'angular';
-import 'angular-animate'
-import 'angular-route';
-import 'angular-ui-bootstrap';
+import * as angular from "angular";
+import "angular-animate";
+import "angular-route";
+import "angular-ui-bootstrap";
 
-import { mainControllerName, MainController } from './controllers/mainController';
-import { navControllerName, NavController } from './controllers/navController';
-import { nunCarouselControllerName, NunCarouselController } from './controllers/nunCarouselController';
-import { prayerRequestControllerName, PrayerRequestController } from './controllers/prayerRequestController';
-import { prayerRequestServiceName, PrayerRequestService } from './services/prayerRequestService';
-import { siteSectionServiceName, SiteSectionService } from './services/siteSectionService';
+import { mainControllerName, MainController } from "./controllers/mainController";
+import { navControllerName, NavController } from "./controllers/navController";
+import { nunCarouselControllerName, NunCarouselController } from "./controllers/nunCarouselController";
+import { prayerRequestControllerName, PrayerRequestController } from "./controllers/prayerRequestController";
+import { prayerRequestServiceName, PrayerRequestService } from "./services/prayerRequestService";
+import { siteSectionServiceName, SiteSectionService } from "./services/siteSectionService";
 
 // Declare controllers / services modules
 export const controllersModuleName = "poorClaresAppControllers";
@@ -37,15 +37,15 @@ export function registerAndStartApp() {
   .config(["$routeProvider", "$locationProvider",
       function ($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
 
-          var cacheBuster = "?v=" + new Date().getTime();
+          const cacheBuster = "?v=" + new Date().getTime();
 
           function getTheConventTemplateUrl(params: any) {
-              var view = params.view || "home";
+              const view = params.view || "home";
               return "templates/theConvent/" + view + ".html" + cacheBuster;
           }
 
           function getMainTemplateUrl(params: any) {
-              var view = params.view || "home";
+              const view = params.view || "home";
               return "templates/main/" + view + ".html" + cacheBuster;
           }
 

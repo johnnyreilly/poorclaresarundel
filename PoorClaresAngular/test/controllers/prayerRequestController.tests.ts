@@ -1,6 +1,6 @@
-import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from '../../src/app';
-import { PrayerRequestService } from '../../src/services/prayerRequestService';
-import { prayerRequestControllerName, PrayerRequestController } from '../../src/controllers/prayerRequestController';
+import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from "../../src/app";
+import { PrayerRequestService } from "../../src/services/prayerRequestService";
+import { prayerRequestControllerName, PrayerRequestController } from "../../src/controllers/prayerRequestController";
 
 registerAndStartApp();
 
@@ -31,12 +31,12 @@ function getInjectable() {
 }
 
 function getPrayerRequestController($controller: Function, dependencies: {}) {
-    return $controller(prayerRequestControllerName, dependencies) as PrayerRequestController
+    return $controller(prayerRequestControllerName, dependencies) as PrayerRequestController;
 }
 
 ﻿describe("Controllers", () => {
     describe("PrayerRequestController", () => {
-        it("should set the message to 'Sending...'", () => {
+        it('should set the message to "Sending..."', () => {
             const { $controller, $scope, $q, prayerRequestService } = getInjectable();
             spyOn(prayerRequestService, "sendPrayerRequest").and.returnValue($q.when());
             const controller = getPrayerRequestController($controller, { $scope, prayerRequestService });

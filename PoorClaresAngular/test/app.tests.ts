@@ -1,5 +1,5 @@
-import { appName, registerAndStartApp } from '../src/app';
-import { SiteSectionService } from '../src/services/siteSectionService';
+import { appName, registerAndStartApp } from "../src/app";
+import { SiteSectionService } from "../src/services/siteSectionService";
 
 registerAndStartApp();
 

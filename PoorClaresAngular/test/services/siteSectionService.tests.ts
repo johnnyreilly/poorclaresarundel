@@ -1,5 +1,5 @@
-import { appName, registerAndStartApp } from '../../src/app';
-import { SiteSectionService } from '../../src/services/siteSectionService';
+import { appName, registerAndStartApp } from "../../src/app";
+import { SiteSectionService } from "../../src/services/siteSectionService";
 
 registerAndStartApp();
 
@@ -24,19 +24,19 @@ describe("Services", () => {
             expect(siteSectionService.getSiteSection()).toBe("home");
         });
 
-        it("should set siteSection to 'home'", () => {
+        it('should set siteSection to "home"', () => {
             const { siteSectionService } = getInjectable();
             siteSectionService.determineSiteSection("/");
             expect(siteSectionService.getSiteSection()).toBe("home");
         });
 
-        it("should set siteSection to 'main'", () => {
+        it('should set siteSection to "main"', () => {
             const { siteSectionService } = getInjectable();
             siteSectionService.determineSiteSection("/hello");
             expect(siteSectionService.getSiteSection()).toBe("main");
         });
 
-        it("should set siteSection to 'theConvent'", () => {
+        it('should set siteSection to "theConvent"', () => {
             const { siteSectionService } = getInjectable();
             siteSectionService.determineSiteSection("/theConvent/");
             expect(siteSectionService.getSiteSection()).toBe("theConvent");

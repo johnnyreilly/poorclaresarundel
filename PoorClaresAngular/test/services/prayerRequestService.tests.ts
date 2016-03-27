@@ -1,5 +1,5 @@
-import { appName, registerAndStartApp } from '../../src/app';
-import { PrayerRequestService } from '../../src/services/prayerRequestService';
+import { appName, registerAndStartApp } from "../../src/app";
+import { PrayerRequestService } from "../../src/services/prayerRequestService";
 
 registerAndStartApp();
 

@@ -99,7 +99,6 @@
     <Content Include="Content\prayerResponse.html" />
     <Content Include="Content\prayerResponse.txt" />
     <Content Include="Global.asax" />
-    <Content Include="gulpfile.config.js" />
     <Content Include="gulpfile.js" />
     <Content Include="karma.conf.js" />
     <Content Include="Content\IntroductoryDay.doc" />
@@ -261,7 +260,6 @@
     <Content Include="static-files\sitemap.txt" />
     <Content Include="static-files\static\workShopCardOrderForm.html" />
     <Content Include="test\main.js" />
-    <Content Include="chutzpah.json" />
     <Content Include="static-files\static\communityFoundationsHollington.pdf" />
     <Content Include="static-files\static\communityTripAroundHouse.pdf" />
     <Content Include="static-files\static\GuestHouse2009.pdf" />
@@ -277,6 +275,7 @@
     <Content Include="test\tsconfig.json" />
     <None Include="Properties\PublishProfiles\poorclareses6 - Web Deploy.pubxml" />
     <Content Include="typings.json" />
+    <Content Include="tslint.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

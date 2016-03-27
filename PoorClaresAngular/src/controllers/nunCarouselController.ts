@@ -1,10 +1,9 @@
-﻿interface slide { image: string; text: string; }
+﻿interface Slide { image: string; text: string; }
 
-interface carouselScope extends ng.IScope
-{
+interface CarouselScope extends ng.IScope {
     myInterval: number;
     addSlide: Function;
-    slides: slide[];
+    slides: Slide[];
 }
 
 export const nunCarouselControllerName = "NunCarouselController";
@@ -12,10 +11,10 @@ export class NunCarouselController {
 
     static $inject = ["$scope"];
     constructor(
-        private $scope: carouselScope) {
+        private $scope: CarouselScope) {
 
         $scope.myInterval = 3000;
-        var slides: slide[] = $scope.slides = [
+        const slides: Slide[] = $scope.slides = [
             {
                 image: "/images/main/Page2CommunityAtPrayer.JPG",
                 text: "Called to a life of prayer"

@@ -1,4 +1,4 @@
-import { PrayerRequestService } from '../services/prayerRequestService';
+import { PrayerRequestService } from "../services/prayerRequestService";
 
 export const prayerRequestControllerName = "PrayerRequestController";
 export class PrayerRequestController {

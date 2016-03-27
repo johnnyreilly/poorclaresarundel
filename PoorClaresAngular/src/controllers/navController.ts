@@ -1,4 +1,4 @@
-import { SiteSectionService } from '../services/siteSectionService';
+import { SiteSectionService } from "../services/siteSectionService";
 
 /**
  * See https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference for docs

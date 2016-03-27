@@ -1,6 +1,6 @@
-import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from '../../src/app';
-import { SiteSectionService } from '../../src/services/siteSectionService';
-import { navControllerName, NavController, IWindowWithAnalyticsService } from '../../src/controllers/navController';
+import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from "../../src/app";
+import { SiteSectionService } from "../../src/services/siteSectionService";
+import { navControllerName, NavController, IWindowWithAnalyticsService } from "../../src/controllers/navController";
 
 registerAndStartApp();
 
@@ -33,7 +33,7 @@ function getInjectable() {
 }
 
 function getNavController($controller: Function, dependencies: {}) {
-    return $controller(navControllerName, dependencies) as NavController
+    return $controller(navControllerName, dependencies) as NavController;
 }
 
 ﻿describe("Controllers", () => {
@@ -67,7 +67,7 @@ function getNavController($controller: Function, dependencies: {}) {
             const fakeSiteSectionService = {
                 siteSection: "away",
                 getSiteSection: function () { return siteSectionService.siteSection; }
-            }
+            };
             const controller = getNavController($controller, { $scope, siteSectionService: fakeSiteSectionService });
             const newSiteSection = "home";
             siteSectionService.siteSection = newSiteSection;
