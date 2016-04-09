@@ -1,6 +1,6 @@
 /* eslint-disable no-var, strict */
 'use strict';
-
+var path = require('path');
 var webpackConfig = require('./webpack.config.js');
 
 module.exports = function(config) {
@@ -31,7 +31,10 @@ module.exports = function(config) {
           loaders: webpackConfig.module.loaders,
           postLoaders: [ { //delays coverage til after tests are run, fixing transpiled source coverage error
             test: /\.ts(x?)$/,
-            exclude: /(test|node_modules)\//,
+            exclude: [
+                path.resolve('test/'),
+                path.resolve('node_modules/')
+            ],
             loader: 'istanbul-instrumenter' } ]
       },
       resolve: webpackConfig.resolve
@@ -55,6 +58,9 @@ module.exports = function(config) {
     },
 
     coverageReporter: {
+        instrumenterOptions: {
+            istanbul: { noCompact: true }
+        },
         reporters: [
             {
                 dir: 'reports/coverage/',
