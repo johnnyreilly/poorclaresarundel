@@ -39,7 +39,7 @@ gulp.task('build-other', ['delete-dist-contents', 'build-process.env.NODE_ENV'],
     staticFiles.build();
 });
 
-gulp.task('run-tests', ['build-js'], function (done) {
+gulp.task('run-tests', [], function (done) {
     tests.run(done);
 });
 

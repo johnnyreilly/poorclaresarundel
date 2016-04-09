@@ -21,14 +21,19 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO, //config.LOG_DEBUG
 
     preprocessors: {
-      'src/**/*.ts': [ 'webpack', 'sourcemap' ],
-      'test/**/*.{ts,js}': [ 'webpack', 'sourcemap' ]
+      'test/main.js': [ 'webpack', 'sourcemap' ]
     },
 
     webpack: {
-      devtool: 'eval-source-map', //'inline-source-map',
+      devtool: 'inline-source-map',
       debug: true,
-      module: webpackConfig.module,
+      module: {
+          loaders: webpackConfig.module.loaders,
+          postLoaders: [ { //delays coverage til after tests are run, fixing transpiled source coverage error
+            test: /\.ts(x?)$/,
+            exclude: /(test|node_modules)\//,
+            loader: 'istanbul-instrumenter' } ]
+      },
       resolve: webpackConfig.resolve
     },
 
@@ -47,6 +52,24 @@ module.exports = function(config) {
         warning: 'bgBlue',
         error: 'bgRed'
       }
+    },
+
+    coverageReporter: {
+        reporters: [
+            {
+                dir: 'reports/coverage/',
+                subdir: '.',
+                type: 'html'
+            },{
+                dir: 'reports/coverage/',
+                subdir: '.',
+                type: 'cobertura'
+            }, {
+                dir: 'reports/coverage/',
+                subdir: '.',
+                type: 'json'
+            }
+        ]
     },
 
     junitReporter: {

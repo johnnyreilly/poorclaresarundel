@@ -1,10 +1,10 @@
 {
-  "name": "PoorClaresAngular",
+  "name": "poor-clares-angular",
   "version": "1.0.0",
   "description": "The website for http://www.poorclaresarundel.org",
   "main": "/",
   "scripts": {
-    "test": "karma start --reporters mocha,junit --single-run --browsers PhantomJS",
+    "test": "karma start --reporters mocha,junit,coverage --single-run --browsers PhantomJS",
     "clean": "gulp delete-dist-contents",
     "watch": "gulp watch",
     "build": "gulp build"
@@ -44,8 +44,10 @@
     "gulp-tslint": "^4.3.4",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
+    "istanbul-instrumenter-loader": "^0.2.0",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.10",
+    "karma-coverage": "^0.5.5",
     "karma-jasmine": "^0.3.6",
     "karma-junit-reporter": "^0.4.0",
     "karma-mocha-reporter": "^2.0.0",
