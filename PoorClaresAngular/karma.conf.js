@@ -79,7 +79,7 @@ module.exports = function(config) {
     },
 
     junitReporter: {
-      outputDir: 'test-results', // results will be saved as $outputDir/$browserName.xml
+      outputDir: 'reports/test', // results will be saved as $outputDir/$browserName.xml
       outputFile: undefined, // if included, results will be saved as $outputDir/$browserName/$outputFile
       suite: ''
     }
