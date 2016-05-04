@@ -1,4 +1,4 @@
-﻿interface Slide { image: string; text: string; id: number }
+﻿interface Slide { image: string; text: string; id: number; }
 
 export const nunCarouselControllerName = "NunCarouselController";
 export class NunCarouselController {
