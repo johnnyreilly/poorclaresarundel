@@ -100,6 +100,12 @@
     <Content Include="Content\prayerResponse.txt" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <None Include="gulp\clean.js" />
+    <None Include="gulp\inject.js" />
+    <None Include="gulp\less.js" />
+    <None Include="gulp\staticFiles.js" />
+    <None Include="gulp\tests.js" />
+    <None Include="gulp\webpack.js" />
     <Content Include="karma.conf.js" />
     <Content Include="Content\IntroductoryDay.doc" />
     <Content Include="package.json" />
@@ -107,6 +113,7 @@
     <Content Include="static-files\images\main\header3.jpg" />
     <Content Include="webpack.config.js" />
     <Content Include="packages.config" />
+    <None Include="gulp\.eslintrc" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular.pubxml" />

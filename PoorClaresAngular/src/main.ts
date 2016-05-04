@@ -1,4 +1,5 @@
 import "babel-polyfill";
 import { registerAndStartApp } from "./app";
 
-registerAndStartApp();
+const appName = registerAndStartApp();
+angular.element(document).ready(() => angular.bootstrap(document, [appName]));

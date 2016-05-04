@@ -16,58 +16,60 @@ export const servicesModuleName = "poorClaresAppServices";
 export const appName = "poorClaresApp";
 
 export function registerAndStartApp() {
-  angular.module(controllersModuleName, [])
-  .controller(mainControllerName, MainController)
-  .controller(navControllerName, NavController)
-  .controller(nunCarouselControllerName, NunCarouselController)
-  .controller(prayerRequestControllerName, PrayerRequestController);
+    angular.module(controllersModuleName, [])
+        .controller(mainControllerName, MainController)
+        .controller(navControllerName, NavController)
+        .controller(nunCarouselControllerName, NunCarouselController)
+        .controller(prayerRequestControllerName, PrayerRequestController);
 
-  angular.module(servicesModuleName, [])
-  .service(prayerRequestServiceName, PrayerRequestService)
-  .service(siteSectionServiceName, SiteSectionService);
+    angular.module(servicesModuleName, [])
+        .service(prayerRequestServiceName, PrayerRequestService)
+        .service(siteSectionServiceName, SiteSectionService);
 
-  // Declare app
-  angular.module(appName, [
-      "ngRoute",
-      "ngAnimate",
-      "ui.bootstrap",
-      controllersModuleName,
-      servicesModuleName
-  ])
-  .config(["$routeProvider", "$locationProvider",
-      function ($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
+    // Declare app
+    angular.module(appName, [
+        "ngRoute",
+        "ngAnimate",
+        "ui.bootstrap",
+        controllersModuleName,
+        servicesModuleName
+    ])
+        .config(["$routeProvider", "$locationProvider",
+            function ($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
 
-          const cacheBuster = "?v=" + new Date().getTime();
+                const cacheBuster = "?v=" + new Date().getTime();
 
-          function getTheConventTemplateUrl(params: any) {
-              const view = params.view || "home";
-              return "templates/theConvent/" + view + ".html" + cacheBuster;
-          }
+                function getTheConventTemplateUrl(params: any) {
+                    const view = params.view || "home";
+                    return "templates/theConvent/" + view + ".html" + cacheBuster;
+                }
 
-          function getMainTemplateUrl(params: any) {
-              const view = params.view || "home";
-              return "templates/main/" + view + ".html" + cacheBuster;
-          }
+                function getMainTemplateUrl(params: any) {
+                    const view = params.view || "home";
+                    return "templates/main/" + view + ".html" + cacheBuster;
+                }
 
-          $routeProvider.
-          when("/", {
-              templateUrl: "templates/home.html" + cacheBuster,
-              controller: mainControllerName
-          }).
-          when("/theConvent/:view", {
-              templateUrl: getTheConventTemplateUrl,
-              controller: mainControllerName,
-              caseInsensitiveMatch: true
-          }).
-          when("/:view", {
-              templateUrl: getMainTemplateUrl,
-              controller: mainControllerName,
-              caseInsensitiveMatch: true
-          }).
-          otherwise({
-              redirectTo: "/"
-          });
+                $routeProvider.
+                    when("/", {
+                        templateUrl: "templates/home.html" + cacheBuster,
+                        controller: mainControllerName
+                    }).
+                    when("/theConvent/:view", {
+                        templateUrl: getTheConventTemplateUrl,
+                        controller: mainControllerName,
+                        caseInsensitiveMatch: true
+                    }).
+                    when("/:view", {
+                        templateUrl: getMainTemplateUrl,
+                        controller: mainControllerName,
+                        caseInsensitiveMatch: true
+                    }).
+                    otherwise({
+                        redirectTo: "/"
+                    });
 
-          $locationProvider.html5Mode(true);
-      }]);
+                $locationProvider.html5Mode(true);
+            }]);
+
+    return appName;
 }
