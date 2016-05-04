@@ -104,6 +104,7 @@
     <Content Include="Content\IntroductoryDay.doc" />
     <Content Include="package.json" />
     <Content Include="PoorClaresAngular.wpp.targets" />
+    <Content Include="static-files\images\main\header3.jpg" />
     <Content Include="webpack.config.js" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\PoorClaresAngular - FTP.pubxml" />
