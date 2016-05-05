@@ -7,9 +7,6 @@ var WebpackNotifierPlugin = require('webpack-notifier');
 var failPlugin = require('webpack-fail-plugin');
 var webpackConfig = require('../webpack.config.js');
 
-var weNeedHash = false;
-var commonChunks = ['vendor'].reverse(); // the common modules in reverse order to which they are specified in webpack.config.js https://github.com/webpack/webpack/issues/1016
-
 function getCommonChunks() {
   return new webpack.optimize.CommonsChunkPlugin({ names: commonChunks });
 }
@@ -17,12 +14,10 @@ function getCommonChunks() {
 function buildProduction(done) {
     // modify some webpack config options
     var myProdConfig = Object.create(webpackConfig);
-    if (weNeedHash) {
-      myProdConfig.output.filename = '[name].[hash].js';
-    }
+    myProdConfig.output.filename = '[name].[hash].js';
 
     myProdConfig.plugins = myProdConfig.plugins.concat(
-      getCommonChunks(),
+      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.[hash].js' }),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin(),
       failPlugin
@@ -46,7 +41,7 @@ function createDevCompiler() {
     myDevConfig.debug = true;
 
     myDevConfig.plugins = myDevConfig.plugins.concat(
-      getCommonChunks(),
+      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
       new WebpackNotifierPlugin({ title: 'Webpack build', excludeWarnings: true })
     );
 
