@@ -20,9 +20,9 @@ function compile(options) {
       .pipe(less().on('error', gutil.log))
       .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
       .pipe(gulpif(!options.isDevelopment, cssmin()))
-      // .pipe(gulpif(!options.isDevelopment, rename(function (path) {
-      //  path.basename += '-' + new Date().toISOString().replace(/:/g, '-');
-      // })))
+      .pipe(gulpif(!options.isDevelopment, rename(function (path) {
+        path.basename += '-' + new Date().toISOString().replace(/:/g, '-');
+      })))
       .pipe(gulpif(options.isDevelopment, sourcemaps.write()))
       .pipe(gulp.dest(dest));
   }
