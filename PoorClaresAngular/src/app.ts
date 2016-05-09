@@ -43,8 +43,8 @@ export function registerAndStartApp() {
 function configureRoutes(app: ng.IModule) {
     app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", configure]);
     function configure(
-            $stateProvider: angular.ui.IStateProvider, 
-            $urlRouterProvider: angular.ui.IUrlRouterProvider, 
+            $stateProvider: angular.ui.IStateProvider,
+            $urlRouterProvider: angular.ui.IUrlRouterProvider,
             $locationProvider: ng.ILocationProvider) {
 
         const cacheBuster = "?v=" + new Date().getTime();
