@@ -34,8 +34,8 @@ export function registerAndStartApp() {
         controllersModuleName,
         servicesModuleName
     ]);
-    
-    configureRoutes(app); 
+
+    configureRoutes(app);
 
     return app.name;
 }
@@ -58,7 +58,7 @@ function configureRoutes(app: ng.IModule) {
             const view = params.view || "home";
             return "templates/main/" + view + ".html" + cacheBuster;
         }
-        
+
         $urlRouterProvider.otherwise("home");
 
         $stateProvider.
