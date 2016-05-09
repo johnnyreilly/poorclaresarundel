@@ -1,7 +1,7 @@
 import * as angular from "angular";
 import "angular-animate";
-import "angular-route";
 import "angular-ui-bootstrap";
+import "angular-ui-router";
 
 import { mainControllerName, MainController } from "./controllers/mainController";
 import { navControllerName, NavController } from "./controllers/navController";
@@ -27,49 +27,57 @@ export function registerAndStartApp() {
         .service(siteSectionServiceName, SiteSectionService);
 
     // Declare app
-    angular.module(appName, [
-        "ngRoute",
+    const app = angular.module(appName, [
         "ngAnimate",
+        "ui.router",
         "ui.bootstrap",
         controllersModuleName,
         servicesModuleName
-    ])
-        .config(["$routeProvider", "$locationProvider",
-            function ($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
+    ]);
+    
+    configureRoutes(app); 
 
-                const cacheBuster = "?v=" + new Date().getTime();
+    return app.name;
+}
 
-                function getTheConventTemplateUrl(params: any) {
-                    const view = params.view || "home";
-                    return "templates/theConvent/" + view + ".html" + cacheBuster;
-                }
+function configureRoutes(app: ng.IModule) {
+    app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", configure]);
+    function configure(
+            $stateProvider: angular.ui.IStateProvider, 
+            $urlRouterProvider: angular.ui.IUrlRouterProvider, 
+            $locationProvider: ng.ILocationProvider) {
 
-                function getMainTemplateUrl(params: any) {
-                    const view = params.view || "home";
-                    return "templates/main/" + view + ".html" + cacheBuster;
-                }
+        const cacheBuster = "?v=" + new Date().getTime();
 
-                $routeProvider.
-                    when("/", {
-                        templateUrl: "templates/home.html" + cacheBuster,
-                        controller: mainControllerName
-                    }).
-                    when("/theConvent/:view", {
-                        templateUrl: getTheConventTemplateUrl,
-                        controller: mainControllerName,
-                        caseInsensitiveMatch: true
-                    }).
-                    when("/:view", {
-                        templateUrl: getMainTemplateUrl,
-                        controller: mainControllerName,
-                        caseInsensitiveMatch: true
-                    }).
-                    otherwise({
-                        redirectTo: "/"
-                    });
+        function getTheConventTemplateUrl(params: any) {
+            const view = params.view || "home";
+            return "templates/theConvent/" + view + ".html" + cacheBuster;
+        }
 
-                $locationProvider.html5Mode(true);
-            }]);
+        function getMainTemplateUrl(params: any) {
+            const view = params.view || "home";
+            return "templates/main/" + view + ".html" + cacheBuster;
+        }
+        
+        $urlRouterProvider.otherwise("home");
 
-    return appName;
+        $stateProvider.
+            state("home", {
+                url: "/",
+                templateUrl: "templates/home.html" + cacheBuster,
+                controller: mainControllerName
+            }).
+            state("the-convent", {
+                url: "/theConvent/:view",
+                templateUrl: getTheConventTemplateUrl,
+                controller: mainControllerName
+            }).
+            state("main", {
+                url: "/:view",
+                templateUrl: getMainTemplateUrl,
+                controller: mainControllerName
+            });
+
+        $locationProvider.html5Mode(true);
+    }
 }
