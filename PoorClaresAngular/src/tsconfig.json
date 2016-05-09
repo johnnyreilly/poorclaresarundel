@@ -8,19 +8,19 @@
     "removeComments": false,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es6"
+    "target": "es2015"
   },
   "filesGlob": [
-    "../typings/browser/**/*.*.ts",
-    "!../typings/browser/ambient/jasmine/index.d.ts",
+    "../typings/main/**/*.*.ts",
+    "!../typings/main/ambient/jasmine/index.d.ts",
     "**/*.ts"
   ],
   "files": [
-    "../typings/browser/ambient/angular-animate/index.d.ts",
-    "../typings/browser/ambient/angular-mocks/index.d.ts",
-    "../typings/browser/ambient/angular-route/index.d.ts",
-    "../typings/browser/ambient/angular/index.d.ts",
-    "../typings/browser/ambient/jquery/index.d.ts",
+    "../typings/main/ambient/angular-animate/index.d.ts",
+    "../typings/main/ambient/angular-mocks/index.d.ts",
+    "../typings/main/ambient/angular-ui-router/index.d.ts",
+    "../typings/main/ambient/angular/index.d.ts",
+    "../typings/main/ambient/jquery/index.d.ts",
     "app.ts",
     "controllers/mainController.ts",
     "controllers/navController.ts",

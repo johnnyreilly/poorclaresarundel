@@ -13,8 +13,8 @@ module.exports = {
       'babel-polyfill',
       'angular',
       'angular-animate',
-      'angular-route',
-      'angular-ui-bootstrap'
+      'angular-ui-bootstrap',
+      'angular-ui-router'
     ]
   },
   output: {

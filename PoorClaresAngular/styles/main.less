@@ -1,8 +1,7 @@
 ﻿@import "build.less";
-//@import "bootstrap/bootstrap.less";
 
 // Animation
-div[ng-view] {
+div[ui-view] {
     &.ng-enter {
         transition: all 0.4s linear;
         opacity: 0;
@@ -35,6 +34,12 @@ div[ng-view] {
 
 .navbar-brand {
     max-height:@navbar-height;
+}
+
+.navbar-toggle {
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .header-image {
