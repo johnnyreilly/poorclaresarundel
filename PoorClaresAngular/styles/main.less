@@ -27,9 +27,19 @@ div[ng-view] {
 // http://angular-ui.github.io/bootstrap/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
+@navbar-height: 30px;
+
+.navbar {
+    margin-bottom:0;
+}
+
+.navbar-brand {
+    max-height:@navbar-height;
+}
+
 .header-image {
     background-size:cover;
-    max-height:50px;
+    max-height:@navbar-height;
     min-height:150px;
 
     &.header-image-main {
