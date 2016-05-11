@@ -1,8 +1,8 @@
-import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from "../../src/app";
+import registerAndStartApp from "../../src/app";
 import { PrayerRequestService } from "../../src/services/prayerRequestService";
 import { prayerRequestControllerName, PrayerRequestController } from "../../src/controllers/prayerRequestController";
 
-registerAndStartApp();
+const appName = registerAndStartApp();
 
 function getInjectable() {
     angular.mock.module(appName);

@@ -9,13 +9,13 @@ import { nunCarouselControllerName, NunCarouselController } from "./controllers/
 import { prayerRequestControllerName, PrayerRequestController } from "./controllers/prayerRequestController";
 import { prayerRequestServiceName, PrayerRequestService } from "./services/prayerRequestService";
 import { siteSectionServiceName, SiteSectionService } from "./services/siteSectionService";
+import configureRoutes from "./app.routes";
 
-// Declare controllers / services modules
-export const controllersModuleName = "poorClaresAppControllers";
-export const servicesModuleName = "poorClaresAppServices";
-export const appName = "poorClaresApp";
+const controllersModuleName = "poorClaresAppControllers";
+const servicesModuleName = "poorClaresAppServices";
+const appName = "poorClaresApp";
 
-export function registerAndStartApp() {
+function registerAndStartApp() {
     angular.module(controllersModuleName, [])
         .controller(mainControllerName, MainController)
         .controller(navControllerName, NavController)
@@ -26,7 +26,6 @@ export function registerAndStartApp() {
         .service(prayerRequestServiceName, PrayerRequestService)
         .service(siteSectionServiceName, SiteSectionService);
 
-    // Declare app
     const app = angular.module(appName, [
         "ngAnimate",
         "ui.router",
@@ -35,49 +34,9 @@ export function registerAndStartApp() {
         servicesModuleName
     ]);
 
-    configureRoutes(app);
+    app.config(configureRoutes);
 
     return app.name;
 }
 
-function configureRoutes(app: ng.IModule) {
-    app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", configure]);
-    function configure(
-            $stateProvider: angular.ui.IStateProvider,
-            $urlRouterProvider: angular.ui.IUrlRouterProvider,
-            $locationProvider: ng.ILocationProvider) {
-
-        const cacheBuster = "?v=" + new Date().getTime();
-
-        function getTheConventTemplateUrl(params: any) {
-            const view = params.view || "home";
-            return "templates/theConvent/" + view + ".html" + cacheBuster;
-        }
-
-        function getMainTemplateUrl(params: any) {
-            const view = params.view || "home";
-            return "templates/main/" + view + ".html" + cacheBuster;
-        }
-
-        $urlRouterProvider.otherwise("home");
-
-        $stateProvider.
-            state("home", {
-                url: "/",
-                templateUrl: "templates/home.html" + cacheBuster,
-                controller: mainControllerName
-            }).
-            state("the-convent", {
-                url: "/theConvent/:view",
-                templateUrl: getTheConventTemplateUrl,
-                controller: mainControllerName
-            }).
-            state("main", {
-                url: "/:view",
-                templateUrl: getMainTemplateUrl,
-                controller: mainControllerName
-            });
-
-        $locationProvider.html5Mode(true);
-    }
-}
+export default registerAndStartApp;

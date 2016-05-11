@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "module": "es2015",
     "noEmitOnError": true,
     "noImplicitAny": true,
@@ -22,6 +23,7 @@
     "../typings/main/ambient/angular/index.d.ts",
     "../typings/main/ambient/jasmine/index.d.ts",
     "../typings/main/ambient/jquery/index.d.ts",
+    "../src/app.routes.ts",
     "../src/app.ts",
     "../src/controllers/mainController.ts",
     "../src/controllers/navController.ts",

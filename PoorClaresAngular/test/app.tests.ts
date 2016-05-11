@@ -1,47 +1,53 @@
-import { appName, registerAndStartApp } from "../src/app";
+import registerAndStartApp from "../src/app";
 import { SiteSectionService } from "../src/services/siteSectionService";
 
-registerAndStartApp();
+const appName = registerAndStartApp();
 
 function getInjectable() {
     angular.mock.module(appName);
 
-    let $route: ng.route.IRouteService;
+    let $state: angular.ui.IStateService;
     let $location: ng.ILocationService;
     let $rootScope: ng.IRootScopeService;
+    let $templateCache: ng.ITemplateCacheService;
 
     angular.mock.inject(($injector: ng.auto.IInjectorService) => {
-        $route = $injector.get<ng.route.IRouteService>("$route");
+        $state = $injector.get<angular.ui.IStateService>("$state");
         $location = $injector.get<ng.ILocationService>("$location");
         $rootScope = $injector.get<ng.IRootScopeService>("$rootScope");
+        $templateCache = $injector.get<ng.ITemplateCacheService>("$templateCache");
     });
 
-    return { $route, $location, $rootScope };
+    $templateCache.put("templates/home.html", "");
+
+    return { $state, $location, $rootScope };
 }
 
 describe("Routes", () => {
     describe("$routeProvider", () => {
         it("should map the root url to the home screen", () => {
-            const { $route } = getInjectable();
-            expect($route.routes["/"].controller).toBe("MainController");
-            expect($route.routes["/"].templateUrl).toMatch("templates/home.html");
+            const { $state } = getInjectable();
+            expect($state.href("home")).toEqual("/");
         });
 
         it("should map urls that start '/theConvent/' to 'the Convent' site section", () => {
-            const { $route } = getInjectable();
-            expect($route.routes["/theConvent/:view"].controller).toBe("MainController");
-            expect($route.routes["/theConvent/:view"].templateUrl({})).toMatch("templates/theConvent/home.html");
+            const { $state } = getInjectable();
+            expect($state.href("the-convent", { view: "home" })).toEqual("/theConvent/home");
         });
 
         it("should map urls to the main site section", () => {
-            const { $route } = getInjectable();
-            expect($route.routes["/:view"].controller).toBe("MainController");
-            expect($route.routes["/:view"].templateUrl({})).toMatch("templates/main/home.html");
+            const { $state } = getInjectable();
+            expect($state.href("main", { view: "us" })).toEqual("/us");
         });
 
-        it("should redirect other urls to the home screen", () => {
-            const { $route } = getInjectable();
-            expect($route.routes[(<any>null)].redirectTo).toBe("/");
+        xit("should redirect other urls to the home screen", () => {
+            const { $state, $rootScope } = getInjectable();
+
+            $state.go("i am not a state");
+            $rootScope.$digest();
+            expect($state.current.name).toBe("home");
+
+            // expect($route.routes[(<any>null)].redirectTo).toBe("/");
         });
     });
 });

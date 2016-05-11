@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "module": "es2015",
     "noEmitOnError": true,
     "noImplicitAny": true,
@@ -21,6 +22,7 @@
     "../typings/main/ambient/angular-ui-router/index.d.ts",
     "../typings/main/ambient/angular/index.d.ts",
     "../typings/main/ambient/jquery/index.d.ts",
+    "app.routes.ts",
     "app.ts",
     "controllers/mainController.ts",
     "controllers/navController.ts",

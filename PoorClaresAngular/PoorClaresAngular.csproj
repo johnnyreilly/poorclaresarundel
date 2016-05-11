@@ -292,6 +292,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <TypeScriptCompile Include="src\app.routes.ts" />
     <TypeScriptCompile Include="src\app.ts" />
     <TypeScriptCompile Include="src\controllers\mainController.ts" />
     <TypeScriptCompile Include="src\controllers\navController.ts" />

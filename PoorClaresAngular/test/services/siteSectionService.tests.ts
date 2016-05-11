@@ -1,7 +1,7 @@
-import { appName, registerAndStartApp } from "../../src/app";
+import registerAndStartApp from "../../src/app";
 import { SiteSectionService } from "../../src/services/siteSectionService";
 
-registerAndStartApp();
+const appName = registerAndStartApp();
 
 function getInjectable() {
     angular.mock.module(appName);

@@ -1,8 +1,8 @@
-import { appName, controllersModuleName, servicesModuleName, registerAndStartApp } from "../../src/app";
+import registerAndStartApp from "../../src/app";
 import { SiteSectionService } from "../../src/services/siteSectionService";
 import { navControllerName, NavController, IWindowWithAnalyticsService } from "../../src/controllers/navController";
 
-registerAndStartApp();
+const appName = registerAndStartApp();
 
 function getInjectable() {
     angular.mock.module(appName);
