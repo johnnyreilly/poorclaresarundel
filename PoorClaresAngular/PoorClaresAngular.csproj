@@ -306,7 +306,6 @@
     <TypeScriptCompile Include="test\controllers\mainController.tests.ts" />
     <TypeScriptCompile Include="test\controllers\navController.tests.ts" />
     <TypeScriptCompile Include="test\controllers\prayerRequestController.tests.ts" />
-    <TypeScriptCompile Include="test\fakes.ts" />
     <TypeScriptCompile Include="test\services\prayerRequestService.tests.ts" />
     <TypeScriptCompile Include="test\services\siteSectionService.tests.ts" />
   </ItemGroup>
