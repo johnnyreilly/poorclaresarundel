@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var WebpackNotifierPlugin = require('webpack-notifier');
 var failPlugin = require('webpack-fail-plugin');
 var webpackConfig = require('../webpack.config.js');
+var packageJson = require('../package.json');
 
 function getCommonChunks() {
   return new webpack.optimize.CommonsChunkPlugin({ names: commonChunks });
@@ -17,6 +18,10 @@ function buildProduction(done) {
     myProdConfig.output.filename = '[name].[hash].js';
 
     myProdConfig.plugins = myProdConfig.plugins.concat(
+      new webpack.DefinePlugin({
+          __IN_DEBUG__: false,
+          __VERSION__: JSON.stringify(packageJson.version + '.' + Date.now())
+      }),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.[hash].js' }),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin(),
@@ -41,6 +46,10 @@ function createDevCompiler() {
     myDevConfig.debug = true;
 
     myDevConfig.plugins = myDevConfig.plugins.concat(
+      new webpack.DefinePlugin({
+          __IN_DEBUG__: true,
+          __VERSION__: JSON.stringify(packageJson.version + '.' + Date.now())
+      }),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
       new WebpackNotifierPlugin({ title: 'Webpack build', excludeWarnings: true })
     );

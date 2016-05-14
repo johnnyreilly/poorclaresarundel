@@ -13,6 +13,7 @@
   },
   "filesGlob": [
     "../typings/main/**/*.*.ts",
+    "../typings/definePluginVariables.d.ts",
     "!../typings/main/ambient/jasmine/index.d.ts",
     "**/*.ts"
   ],
@@ -22,12 +23,14 @@
     "../typings/main/ambient/angular-ui-router/index.d.ts",
     "../typings/main/ambient/angular/index.d.ts",
     "../typings/main/ambient/jquery/index.d.ts",
+    "../typings/definePluginVariables.d.ts",
     "app.routes.ts",
     "app.ts",
     "controllers/mainController.ts",
     "controllers/navController.ts",
     "controllers/nunCarouselController.ts",
     "controllers/prayerRequestController.ts",
+    "httpInterceptors/requestUrl.ts",
     "main.ts",
     "services/prayerRequestService.ts",
     "services/siteSectionService.ts"

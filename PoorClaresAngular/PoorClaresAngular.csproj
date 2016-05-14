@@ -298,6 +298,7 @@
     <TypeScriptCompile Include="src\controllers\navController.ts" />
     <TypeScriptCompile Include="src\controllers\nunCarouselController.ts" />
     <TypeScriptCompile Include="src\controllers\prayerRequestController.ts" />
+    <TypeScriptCompile Include="src\httpInterceptors\requestUrl.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\services\prayerRequestService.ts" />
     <TypeScriptCompile Include="src\services\siteSectionService.ts" />
@@ -305,6 +306,7 @@
     <TypeScriptCompile Include="test\controllers\mainController.tests.ts" />
     <TypeScriptCompile Include="test\controllers\navController.tests.ts" />
     <TypeScriptCompile Include="test\controllers\prayerRequestController.tests.ts" />
+    <TypeScriptCompile Include="test\fakes.ts" />
     <TypeScriptCompile Include="test\services\prayerRequestService.tests.ts" />
     <TypeScriptCompile Include="test\services\siteSectionService.tests.ts" />
   </ItemGroup>

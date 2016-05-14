@@ -1,6 +1,7 @@
 /* eslint-disable no-var, strict */
 'use strict';
 var path = require('path');
+var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 
 module.exports = function(config) {
@@ -37,6 +38,12 @@ module.exports = function(config) {
             ],
             loader: 'istanbul-instrumenter' } ]
       },
+      plugins: [
+        new webpack.DefinePlugin({
+            __IN_DEBUG__: false,
+            __VERSION__: JSON.stringify('tests')
+        })
+      ],
       resolve: webpackConfig.resolve
     },
 

@@ -1,7 +1,7 @@
-import registerAndStartApp from "../src/app";
+import registerApp from "../src/app";
 import { SiteSectionService } from "../src/services/siteSectionService";
 
-const appName = registerAndStartApp();
+const appName = registerApp();
 
 function getInjectable() {
     angular.mock.module(appName);
@@ -32,12 +32,12 @@ describe("Routes", () => {
 
         it("should map urls that start '/theConvent/' to 'the Convent' site section", () => {
             const { $state } = getInjectable();
-            expect($state.href("the-convent", { view: "home" })).toEqual("/theConvent/home");
+            expect($state.href("the-convent.content", { view: "home" })).toEqual("/theConvent/home");
         });
 
         it("should map urls to the main site section", () => {
             const { $state } = getInjectable();
-            expect($state.href("main", { view: "us" })).toEqual("/us");
+            expect($state.href("main.content", { view: "us" })).toEqual("/us");
         });
 
         xit("should redirect other urls to the home screen", () => {

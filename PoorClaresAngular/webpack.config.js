@@ -2,6 +2,8 @@
 'use strict';
 
 var path = require('path');
+var webpack = require('webpack');
+var packageJson = require('./package.json');
 
 module.exports = {
   cache: true,
@@ -36,8 +38,7 @@ module.exports = {
       }
     }]
   },
-  plugins: [
-    // Check gulp/webpack.js for plugins
+  plugins: [ // Check gulp/webpack.js for build specific plugins
   ],
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.

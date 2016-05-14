@@ -9,23 +9,14 @@ import { nunCarouselControllerName, NunCarouselController } from "./controllers/
 import { prayerRequestControllerName, PrayerRequestController } from "./controllers/prayerRequestController";
 import { prayerRequestServiceName, PrayerRequestService } from "./services/prayerRequestService";
 import { siteSectionServiceName, SiteSectionService } from "./services/siteSectionService";
+import { requestUrlName, requestUrlFactory } from "./httpInterceptors/requestUrl";
 import configureRoutes from "./app.routes";
 
-const controllersModuleName = "poorClaresAppControllers";
-const servicesModuleName = "poorClaresAppServices";
 const appName = "poorClaresApp";
 
-function registerAndStartApp() {
-    angular.module(controllersModuleName, [])
-        .controller(mainControllerName, MainController)
-        .controller(navControllerName, NavController)
-        .controller(nunCarouselControllerName, NunCarouselController)
-        .controller(prayerRequestControllerName, PrayerRequestController);
-
-    angular.module(servicesModuleName, [])
-        .service(prayerRequestServiceName, PrayerRequestService)
-        .service(siteSectionServiceName, SiteSectionService);
-
+function registerApp() {
+    const controllersModuleName = registerControllers();
+    const servicesModuleName = registerServices();
     const app = angular.module(appName, [
         "ngAnimate",
         "ui.router",
@@ -34,9 +25,52 @@ function registerAndStartApp() {
         servicesModuleName
     ]);
 
+// console.log("__IN_DEBUG__", __IN_DEBUG__, typeof __IN_DEBUG__);
+// console.log("__VERSION__", __VERSION__, typeof __VERSION__);
+
     app.config(configureRoutes);
+    // app.value(configName, config);
+
+    configureApp(app, __IN_DEBUG__);
+
+    configureHttpInterceptors(app);
+
+    // decorateExceptionHandler(app);
 
     return app.name;
 }
 
-export default registerAndStartApp;
+function registerControllers() {
+    return angular.module("poorClaresAppControllers", [])
+        .controller(mainControllerName, MainController)
+        .controller(navControllerName, NavController)
+        .controller(nunCarouselControllerName, NunCarouselController)
+        .controller(prayerRequestControllerName, PrayerRequestController)
+        .name;
+}
+
+function registerServices() {
+    return angular.module("poorClaresAppServices", [])
+        .service(prayerRequestServiceName, PrayerRequestService)
+        .service(siteSectionServiceName, SiteSectionService)
+        .name;
+}
+
+function configureApp(app: ng.IModule, inDebug: boolean) {
+    app.config(["$logProvider", "$compileProvider", (
+        $logProvider: ng.ILogProvider,
+        $compileProvider: ng.ICompileProvider
+    ) => {
+        $logProvider.debugEnabled(inDebug);
+        $compileProvider.debugInfoEnabled(inDebug);
+    }]);
+}
+
+function configureHttpInterceptors(app: ng.IModule) {
+    app.factory(requestUrlName, requestUrlFactory)
+        .config(["$httpProvider", function ($httpProvider: ng.IHttpProvider) {
+            $httpProvider.interceptors.push(requestUrlName);
+        }]);
+}
+
+export default registerApp;
