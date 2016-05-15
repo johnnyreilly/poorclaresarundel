@@ -45,13 +45,6 @@ function getNavController($controller: Function, dependencies: {}) {
             expect(controller.isCollapsed).toBe(true);
         });
 
-        it("should set the default value of siteSection", () => {
-            const { $controller, $scope } = getInjectable();
-            const controller = getNavController($controller, { $scope });
-
-            expect(controller.siteSection).toBe("home");
-        });
-
         it("should toggle the value of isCollapsed when toggleCollapsed is called", () => {
             const { $controller, $scope } = getInjectable();
             const controller = getNavController($controller, { $scope });
@@ -62,32 +55,18 @@ function getNavController($controller: Function, dependencies: {}) {
             expect(controller.isCollapsed).toBe(!isCollapsed);
         });
 
-        it("should watch for changes to the siteSection value", () => {
-            const { $controller, $scope, siteSectionService } = getInjectable();
-            const fakeSiteSectionService = {
-                siteSection: "away",
-                getSiteSection: function () { return siteSectionService.siteSection; }
-            };
-            const controller = getNavController($controller, { $scope, siteSectionService: fakeSiteSectionService });
-            const newSiteSection = "home";
-            siteSectionService.siteSection = newSiteSection;
-            $scope.$apply();
-
-            expect(controller.siteSection).toBe(newSiteSection);
-        });
-
-        it("should set isCollapsed to true on $routeChangeStart event", function () {
+        it("should set isCollapsed to true on $stateChangeStart event", function () {
             const { $controller, $rootScope, $scope } = getInjectable();
             const controller = getNavController($controller, { $scope });
 
             controller.isCollapsed = false;
 
-            $rootScope.$broadcast("$routeChangeStart", null);
+            $rootScope.$broadcast("$stateChangeStart", null);
 
             expect(controller.isCollapsed).toBe(true);
         });
 
-        it("should send a pageview to Google Analytics on $routeChangeSuccess event", function () {
+        it("should send a pageview to Google Analytics on $stateChangeSuccess event", function () {
             const { $controller, $rootScope, $scope, $location } = getInjectable();
             const $window = {
               ga(command: string, hitType: string, fields: {
@@ -98,7 +77,7 @@ function getNavController($controller: Function, dependencies: {}) {
             const controller = getNavController($controller, { $scope, $window });
             spyOn($window, "ga");
 
-            $rootScope.$broadcast("$routeChangeSuccess", null);
+            $rootScope.$broadcast("$stateChangeSuccess", null);
 
             expect($window.ga).toHaveBeenCalledWith("send", "pageview", { page: $location.path() });
         });

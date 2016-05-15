@@ -13,8 +13,6 @@ export interface IWindowWithAnalyticsService extends ng.IWindowService {
 export const navControllerName = "NavController";
 export class NavController {
 
-    cacheBuster: string;
-    siteSection: string;
     isCollapsed: boolean;
 
     static $inject = ["$scope", "$rootScope", "siteSectionService", "$location", "$window"];
@@ -25,25 +23,11 @@ export class NavController {
         private $location: ng.ILocationService,
         private $window: IWindowWithAnalyticsService) {
 
-        this.cacheBuster = "?v=" + new Date().getTime();
         this.isCollapsed = true;
-        this.siteSection = siteSectionService.getSiteSection();
 
-        $scope.$watch(scope => siteSectionService.getSiteSection(), (newValue, oldValue, scope) => {
-            this.siteSection = newValue;
-        });
-
-        $rootScope.$on("$routeChangeStart", (event, current, previous, rejection) => this.isCollapsed = true);
-        $rootScope.$on("$routeChangeSuccess", (event, current, previous, rejection) => $window.ga("send", "pageview", { page: $location.path() }));
-        $rootScope.$on("$routeChangeError", (event, current, previous, rejection) => { });
-    }
-
-    get showMain() {
-        return this.siteSection === "main";
-    }
-
-    get showTheConvent() {
-        return this.siteSection === "theConvent";
+        $rootScope.$on("$stateChangeStart", (event, toState, toParams, fromState, fromParams) => this.isCollapsed = true);
+        $rootScope.$on("$stateChangeError", (event, toState, toParams, fromState, fromParams, error) => { });
+        $rootScope.$on("$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) => $window.ga("send", "pageview", { page: $location.path() }));
     }
 
     toggleCollapsed() {

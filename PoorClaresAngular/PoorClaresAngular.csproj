@@ -223,7 +223,6 @@
     <Content Include="static-files\images\theConvent\Tiggers2.jpg" />
     <Content Include="static-files\images\theConvent\Tiggers3.jpg" />
     <Content Include="static-files\images\theConvent\Tiggers4.jpg" />
-    <Content Include="src\templates\header.html" />
     <Content Include="src\templates\home.html" />
     <Content Include="src\templates\main\beginningsClaresPrayers.html" />
     <Content Include="src\templates\main\beginningsClaresStory.html" />
