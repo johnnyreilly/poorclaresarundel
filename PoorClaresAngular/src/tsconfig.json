@@ -12,17 +12,17 @@
     "target": "es2015"
   },
   "filesGlob": [
-    "../typings/main/**/*.*.ts",
+    "../typings/globals/**/*.*.ts",
     "../typings/definePluginVariables.d.ts",
-    "!../typings/main/ambient/jasmine/index.d.ts",
+    "!../typings/globals/jasmine/index.d.ts",
     "**/*.ts"
   ],
   "files": [
-    "../typings/main/ambient/angular-animate/index.d.ts",
-    "../typings/main/ambient/angular-mocks/index.d.ts",
-    "../typings/main/ambient/angular-ui-router/index.d.ts",
-    "../typings/main/ambient/angular/index.d.ts",
-    "../typings/main/ambient/jquery/index.d.ts",
+    "../typings/globals/angular-animate/index.d.ts",
+    "../typings/globals/angular-mocks/index.d.ts",
+    "../typings/globals/angular-ui-router/index.d.ts",
+    "../typings/globals/angular/index.d.ts",
+    "../typings/globals/jquery/index.d.ts",
     "../typings/definePluginVariables.d.ts",
     "app.routes.ts",
     "app.ts",

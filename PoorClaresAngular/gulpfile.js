@@ -83,3 +83,12 @@ gulp.task('watch', ['delete-dist-contents'], function (done) {
     staticFiles.watch();
     tests.watch();
 });
+
+gulp.task('serve', ['watch'], function() {
+  // local as not required for build
+  var express = require('express')
+  var app = express()
+
+  app.use(express.static('dist', {'index': 'index.html'}))
+  app.listen(3000);
+});

@@ -1,7 +1,7 @@
 {
   "name": "PoorClaresAngular",
   "version": false,
-  "ambientDependencies": {
+  "globalDependencies": {
     "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#fe563dff3428bac1260d1794e2c2ecf8f097535a",
     "angular-animate": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-animate.d.ts#fe563dff3428bac1260d1794e2c2ecf8f097535a",
     "angular-mocks": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-mocks.d.ts#fe563dff3428bac1260d1794e2c2ecf8f097535a",
