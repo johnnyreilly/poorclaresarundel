@@ -282,7 +282,8 @@
     <Content Include="styles\variables.less" />
     <Content Include="test\tsconfig.json" />
     <None Include="Properties\PublishProfiles\poorclareses6 - Web Deploy.pubxml" />
-    <Content Include="typings.json" />
+    <Content Include="src\typings.json" />
+    <Content Include="test\typings.json" />
     <Content Include="tslint.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
