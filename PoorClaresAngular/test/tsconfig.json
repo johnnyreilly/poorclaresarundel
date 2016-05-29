@@ -11,37 +11,6 @@
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2015"
   },
-  "filesGlob": [
-    "../typings/globals/**/*.*.ts",
-    "../typings/definePluginVariables.d.ts",
-    "../src/**/*.ts",
-    "**/*.ts"
-  ],
-  "files": [
-    "../typings/globals/angular-animate/index.d.ts",
-    "../typings/globals/angular-mocks/index.d.ts",
-    "../typings/globals/angular-ui-router/index.d.ts",
-    "../typings/globals/angular/index.d.ts",
-    "../typings/globals/jasmine/index.d.ts",
-    "../typings/globals/jquery/index.d.ts",
-    "../typings/definePluginVariables.d.ts",
-    "../src/app.routes.ts",
-    "../src/app.ts",
-    "../src/controllers/mainController.ts",
-    "../src/controllers/navController.ts",
-    "../src/controllers/nunCarouselController.ts",
-    "../src/controllers/prayerRequestController.ts",
-    "../src/httpInterceptors/requestUrl.ts",
-    "../src/main.ts",
-    "../src/services/prayerRequestService.ts",
-    "../src/services/siteSectionService.ts",
-    "app.tests.ts",
-    "controllers/mainController.tests.ts",
-    "controllers/navController.tests.ts",
-    "controllers/prayerRequestController.tests.ts",
-    "services/prayerRequestService.tests.ts",
-    "services/siteSectionService.tests.ts"
-  ],
   "atom": {
     "rewriteTsconfig": true
   }

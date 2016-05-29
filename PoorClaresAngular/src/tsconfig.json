@@ -11,30 +11,6 @@
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2015"
   },
-  "filesGlob": [
-    "../typings/globals/**/*.*.ts",
-    "../typings/definePluginVariables.d.ts",
-    "!../typings/globals/jasmine/index.d.ts",
-    "**/*.ts"
-  ],
-  "files": [
-    "../typings/globals/angular-animate/index.d.ts",
-    "../typings/globals/angular-mocks/index.d.ts",
-    "../typings/globals/angular-ui-router/index.d.ts",
-    "../typings/globals/angular/index.d.ts",
-    "../typings/globals/jquery/index.d.ts",
-    "../typings/definePluginVariables.d.ts",
-    "app.routes.ts",
-    "app.ts",
-    "controllers/mainController.ts",
-    "controllers/navController.ts",
-    "controllers/nunCarouselController.ts",
-    "controllers/prayerRequestController.ts",
-    "httpInterceptors/requestUrl.ts",
-    "main.ts",
-    "services/prayerRequestService.ts",
-    "services/siteSectionService.ts"
-  ],
   "atom": {
     "rewriteTsconfig": true
   }
