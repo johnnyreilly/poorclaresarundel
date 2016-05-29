@@ -17,7 +17,7 @@ var inject = require('./gulp/inject');
 var isDebug = yargs.mode === "Debug";
 
 var eslintSrcs = ['./gulp/**/*.js'];
-var tslintSrcs = ['./src/**/*.ts', './test/**/*.ts'];
+var tslintSrcs = ['./src/**/*.ts', './test/**/*.ts', '!**/*.d.ts'];
 
 gulp.task('delete-dist-contents', function (done) {
     clean.run(done);
