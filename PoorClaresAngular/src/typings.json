@@ -1,5 +1,5 @@
 {
-  "name": "poor-clares",
+  "name": "poor-clares-arundel",
   "version": false,
   "globalDependencies": {
     "define-plugin-variables": "file:../typings/define-plugin-variables.d.ts",
