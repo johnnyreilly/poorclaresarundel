@@ -19,7 +19,7 @@ function buildProduction(done) {
 
     myProdConfig.plugins = myProdConfig.plugins.concat(
       new webpack.DefinePlugin({
-          __IN_DEBUG__: false,
+          __IN_DEBUG__: JSON.stringify(false),
           __VERSION__: JSON.stringify(packageJson.version + '.' + Date.now())
       }),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.[hash].js' }),
@@ -47,7 +47,7 @@ function createDevCompiler() {
 
     myDevConfig.plugins = myDevConfig.plugins.concat(
       new webpack.DefinePlugin({
-          __IN_DEBUG__: true,
+          __IN_DEBUG__: JSON.stringify(true),
           __VERSION__: JSON.stringify(packageJson.version + '.' + Date.now())
       }),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
