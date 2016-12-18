@@ -1,3 +1,5 @@
+import angular from "angular";
+import "angular-mocks";
 import registerApp from "../../src/app";
 import { SiteSectionService } from "../../src/services/siteSectionService";
 import { navControllerName, NavController, IWindowWithAnalyticsService } from "../../src/controllers/navController";

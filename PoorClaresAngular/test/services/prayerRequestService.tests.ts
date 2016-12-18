@@ -1,3 +1,5 @@
+import angular from "angular";
+import "angular-mocks";
 import registerApp from "../../src/app";
 import { PrayerRequestService } from "../../src/services/prayerRequestService";
 
