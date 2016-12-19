@@ -275,12 +275,11 @@
     <Content Include="static-files\static\StraightPrayingWithClare.doc" />
     <Content Include="static-files\static\Stylist_Life_in_a_convent.pdf" />
     <Content Include="static-files\static\tripAroundGuestHouse.pdf" />
-    <Content Include="src\tsconfig.json" />
+    <Content Include="tsconfig.json" />
     <Content Include="styles\bootswatch.less" />
     <Content Include="styles\build.less" />
     <Content Include="styles\main.less" />
     <Content Include="styles\variables.less" />
-    <Content Include="test\tsconfig.json" />
     <None Include="Properties\PublishProfiles\poorclareses6 - Web Deploy.pubxml" />
     <Content Include="src\typings.json" />
     <Content Include="test\typings.json" />
