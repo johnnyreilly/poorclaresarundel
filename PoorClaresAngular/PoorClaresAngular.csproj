@@ -102,7 +102,7 @@
     <Content Include="gulpfile.js" />
     <None Include="gulp\clean.js" />
     <None Include="gulp\inject.js" />
-    <None Include="gulp\less.js" />
+    <None Include="gulp\sass.js" />
     <None Include="gulp\staticFiles.js" />
     <None Include="gulp\tests.js" />
     <None Include="gulp\webpack.js" />
@@ -276,10 +276,9 @@
     <Content Include="static-files\static\Stylist_Life_in_a_convent.pdf" />
     <Content Include="static-files\static\tripAroundGuestHouse.pdf" />
     <Content Include="tsconfig.json" />
-    <Content Include="styles\bootswatch.less" />
-    <Content Include="styles\build.less" />
-    <Content Include="styles\main.less" />
-    <Content Include="styles\variables.less" />
+    <Content Include="styles\vendor\cerulean\_bootswatch.scss" />
+    <Content Include="styles\main.scss" />
+    <Content Include="styles\vendor\cerulean\_variables.scss" />
     <None Include="Properties\PublishProfiles\poorclareses6 - Web Deploy.pubxml" />
     <Content Include="tslint.json" />
     <None Include="Web.Debug.config">
