@@ -1,5 +1,9 @@
-﻿@import "build.less";
-@import "../node_modules/font-awesome/less/font-awesome";
+﻿$icon-font-path: "../fonts/";
+@import "vendor/cerulean/_variables";
+@import "bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "vendor/cerulean/_bootswatch";
+
+@import "font-awesome/scss/font-awesome";
 
 // Animation
 div[ui-view] {
@@ -27,14 +31,14 @@ div[ui-view] {
 // http://angular-ui.github.io/bootstrap/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
-@navbar-height: 30px;
+$navbar-height: 30px;
 
 .navbar {
     margin-bottom:0;
 }
 
 .navbar-brand {
-    max-height:@navbar-height;
+    max-height: $navbar-height;
 }
 
 .navbar-toggle {
@@ -44,9 +48,9 @@ div[ui-view] {
 }
 
 .header-image {
-    background-size:cover;
-    max-height:@navbar-height;
-    min-height:150px;
+    background-size: cover;
+    max-height: $navbar-height;
+    min-height: 150px;
 
     &.header-image-main {
         background-image: url('/images/main/header3.jpg'); 

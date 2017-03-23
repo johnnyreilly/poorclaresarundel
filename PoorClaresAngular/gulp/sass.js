@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var less = require('gulp-less');
+var sass = require('gulp-sass');
 var gulpif = require('gulp-if');
 var gutil = require('gulp-util');
 var cssmin = require('gulp-cssmin');
@@ -9,7 +9,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 
-var src = './styles/main.less';
+var src = './styles/main.scss';
 var dest = './dist/styles';
 
 function compile(options) {
@@ -17,7 +17,12 @@ function compile(options) {
     return gulp.src(src)
       .on('end', function() { if (done) { done(); } })
       .pipe(gulpif(options.isDevelopment, sourcemaps.init()))
-      .pipe(less().on('error', gutil.log))
+      .pipe(sass({
+          includePaths: [
+              '.',
+              './node_modules'
+          ]
+      }).on('error', sass.logError))
       .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
       .pipe(gulpif(!options.isDevelopment, cssmin()))
       .pipe(gulpif(!options.isDevelopment, rename(function (path) {
@@ -28,7 +33,7 @@ function compile(options) {
   }
 
   if (options.shouldWatch) {
-    gulp.watch(src, function() { run(); });
+    gulp.watch('./styles/**/*.scss', function() { run(); });
   }
 
   return new Promise(function(resolve, reject) {
@@ -36,7 +41,7 @@ function compile(options) {
       if (err) {
         reject(err);
       } else {
-        resolve('less');
+        resolve('scss');
       }
     });
   });

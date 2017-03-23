@@ -19,6 +19,9 @@ function buildProduction(done) {
 
     myProdConfig.plugins = myProdConfig.plugins.concat(
       new webpack.DefinePlugin({
+         "process.env": {
+            "NODE_ENV": JSON.stringify("production")
+         },
           __IN_DEBUG__: JSON.stringify(false),
           __VERSION__: JSON.stringify(packageJson.version + '.' + Date.now())
       }),
